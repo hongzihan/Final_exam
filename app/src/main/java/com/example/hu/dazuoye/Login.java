@@ -47,7 +47,7 @@ public class Login extends Dialog {
         login_password = (EditText) findViewById(R.id.login_password);
 
     }
-
+//made by ken ,2018/1/8
     public void login(View view) {
 
         String account = login_account.getText().toString().trim();
@@ -87,5 +87,13 @@ public class Login extends Dialog {
     public void register(View v){
 
         startActivity(new Intent(this,Register.class));
+    }
+
+
+    public void forget(View v){
+        String account = login_account.getText().toString().trim();
+        UserDao udao = new UserDao(this);
+        String password = udao.findPassword(account);
+        Toast.makeText(this,"您的密码是" + password,Toast.LENGTH_SHORT).show();
     }
 }
