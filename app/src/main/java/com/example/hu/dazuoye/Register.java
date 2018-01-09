@@ -9,6 +9,7 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import com.example.hu.dazuoye.db.dao.UserDao;
+import com.sun.corba.se.impl.oa.toa.TOA;
 
 /**
  * Created by a1398 on 2018/1/5.
@@ -49,6 +50,10 @@ public class Register extends TitleActivity {
         String repassword = ed_repassword.getText().toString().trim();
         if(TextUtils.isEmpty(username) || TextUtils.isEmpty(account) || TextUtils.isEmpty(password) || TextUtils.isEmpty(repassword)){
             Toast.makeText(this, "请检查是否有信息未填入", Toast.LENGTH_SHORT).show();
+        }else if(TextUtils.getTrimmedLength(account)!=11){
+            Toast.makeText(this,"手机号只能为11位纯数字",Toast.LENGTH_SHORT).show();
+        }else if(TextUtils.getTrimmedLength(password)<6 || TextUtils.getTrimmedLength(repassword)<6){
+            Toast.makeText(this,"最小密码长度为6位！",Toast.LENGTH_SHORT).show();
         }else{
             if(password.equals(repassword) ) {
 
