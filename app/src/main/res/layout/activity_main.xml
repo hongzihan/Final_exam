@@ -55,6 +55,34 @@
                     android:text=" "
                     android:textSize="26sp"/>
             </TableRow>
+
+            <TableRow>
+                <TextView
+                    android:layout_width="10dp"/>
+
+                <TextView
+
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:paddingLeft="5dp"
+                    android:text="当前车速:"
+                    android:textColor="#000"
+                    android:textSize="20dp"
+                    android:textStyle="bold"
+                    android:textAlignment="viewEnd"/>
+                <TextView
+                    android:id="@+id/main_carSpeed"
+                    android:layout_weight="1"
+                    android:layout_span="3"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="未知"
+                    android:textSize="18dp"
+                    android:textColor="#000"
+                    android:paddingLeft="5dp"/>
+            </TableRow>
+
             <TableRow>
                 <TextView
                     android:layout_width="10dp"/>
@@ -76,7 +104,7 @@
                     android:layout_span="3"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="1111"
+                    android:text="未知"
                     android:textSize="20dp"
                     android:textColor="#000"
                     android:paddingLeft="5dp"/>
@@ -102,7 +130,7 @@
                     android:layout_span="3"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="1111"
+                    android:text="未知"
                     android:textSize="20dp"
                     android:textColor="#000"
                     android:paddingLeft="5dp"/>
@@ -128,7 +156,7 @@
                     android:layout_span="3"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="1111"
+                    android:text="未知"
                     android:textSize="20dp"
                     android:textColor="#000"
                     android:paddingLeft="5dp"/>

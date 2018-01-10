@@ -58,7 +58,7 @@ public class ReCharge extends TitleActivity {
     public void pay_Ed(View view) {
         if(flag) {
             mEditText.setText("");
-            mEditText.setHint("请输入您想要充值的账户");
+            mEditText.setHint("请输入充值手机号");
             mPayForTv.setText("");
             flag = false;
         }

@@ -31,26 +31,6 @@ public class MainActivity extends TitleActivity {
 
     private long exit_time;//用于实现按两次back退出
 
-    //六图表
-//    private LinearLayout mTemperatureCurveLayout;
-//    private LinearLayout mHumidityCurveLayout;
-//    private LinearLayout mPM25CurveLayout;
-//    private LinearLayout mCO2CurveLayout;
-//    private LinearLayout mSunlightCurveLayout;
-//    private LinearLayout mRoadwayCurveLayout;
-//
-//    private GraphicalView mTemperatureView, mCO2View, mHumidityView, mPM25View, mRoadwayView, mSunlightView;//
-
-
-    //六个服务的定义
-//    private ChartService mTemperatureService;
-//    private ChartService mCO2Service;
-//    private ChartService mHumidityService;
-//    private ChartService mPM25Service;
-//    private ChartService mSunlightService;
-//    private ChartService mRoadwayService;
-
-//    private Timer timer;
 
 
     @Override
@@ -77,53 +57,30 @@ public class MainActivity extends TitleActivity {
         Intent intent = getIntent();
         String account = intent.getStringExtra("account");
         UserDao udao = new UserDao(this);
+        TextView main_carSpeed = (TextView)findViewById(R.id.main_carSpeed);
+        main_carSpeed.setText(randomDatas(0,120) + "km/h" + "最高车速为120km/h");
         TextView main_username = (TextView)findViewById(R.id.main_username);
         main_username.setText(udao.findUsername(account));
         TextView main_account = (TextView)findViewById(R.id.main_account);
         main_account.setText(account);
         TextView main_balance = (TextView)findViewById(R.id.main_balance);
         String balance=Integer.toString(udao.findBalance(account));
-        main_balance.setText(balance);
+        main_balance.setText(balance + "元");
 
 
 
 
 
-//        //六个图表--------
-//        mTemperatureCurveLayout = (LinearLayout) findViewById(R.id.chart_temperature);
-//        mCO2CurveLayout = (LinearLayout) findViewById(R.id.chart_co2);
-//
-//        mTemperatureService = new ChartService(this);
-//        mTemperatureService.setXYMultipleSeriesDataset("温度曲线");
-//        mTemperatureService.setXYMultipleSeriesRenderer(100, 100, "温度曲线", "时间", "温度",
-//                Color.RED, Color.RED, Color.RED, Color.BLACK);
-//        mTemperatureView = mTemperatureService.getGraphicalView();
-//
-//        mCO2Service = new ChartService(this);
-//        mCO2Service.setXYMultipleSeriesDataset("CO2曲线");
-//        mCO2Service.setXYMultipleSeriesRenderer(100, 100, "CO2曲线", "时间", "CO2",
-//                Color.RED, Color.RED, Color.RED, Color.BLACK);
-//        mCO2View = mCO2Service.getGraphicalView();
-//
-//        //将左右图表添加到布局容器中
-//        mTemperatureCurveLayout.addView(mTemperatureView, new ViewGroup.LayoutParams(
-//                ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT));
-//        mCO2CurveLayout.addView(mCO2View, new ViewGroup.LayoutParams(
-//                ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT));
-//
-//        timer = new Timer();
-//        timer.schedule(new TimerTask() {
-//            @Override
-//            public void run() {
-//                handler.sendMessage(handler.obtainMessage());
-//            }
-//        }, 10, 5000);
+
 
 
 
     }
 
-
+    //随机函数
+    public Integer randomDatas(Integer minnum, Integer maxnum){
+        return (int)(minnum+Math.random()*(maxnum-minnum+1));
+    }
 
 
     //主界面返回键重置为回到桌面
@@ -156,28 +113,5 @@ public class MainActivity extends TitleActivity {
 
 
 
-//    @Override
-//    public boolean onCreateOptionsMenu(Menu menu) {
-//        getMenuInflater().inflate(R.menu.main, menu);
-//        return true;
-//    }
-//
-//    private int t = 0;
-//    private Handler handler = new Handler() {
-//        @Override
-//        //定时更新图表
-//        public void handleMessage(Message msg) {
-//            mTemperatureService.updateChart(t, Math.random() * 100);
-//            mCO2Service.updateChart(t, Math.random() * 100);
-//            t+=5;
-//        }
-//    };
-//
-//    @Override
-//    protected void onDestroy() {
-//        super.onDestroy();
-//        if (timer != null) {
-//            timer.cancel();
-//        }
-//    }
+
 }

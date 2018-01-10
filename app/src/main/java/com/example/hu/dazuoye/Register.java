@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.text.TextUtils;
+import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
@@ -64,8 +65,9 @@ public class Register extends TitleActivity {
                     Toast.makeText(this, "该账号已存在", Toast.LENGTH_SHORT).show();
                 }else{
                     udao.insert(username, account, password, 0);
+
                     Toast.makeText(this, "恭喜你！注册成功", Toast.LENGTH_SHORT).show();
-                    //跳转登录
+                    //跳转登录界面
                     startActivity(new Intent(this,Login.class));
                 }
             }else{

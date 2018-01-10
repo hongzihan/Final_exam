@@ -8,6 +8,7 @@ import android.view.KeyEvent;
 import android.view.View;
 import android.view.Window;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.hu.dazuoye.db.dao.UserDao;
@@ -94,6 +95,14 @@ public class Login extends Dialog {
         String account = login_account.getText().toString().trim();
         UserDao udao = new UserDao(this);
         String password = udao.findPassword(account);
-        Toast.makeText(this,"您的密码是" + password,Toast.LENGTH_SHORT).show();
+        if(TextUtils.isEmpty(account)){
+            Toast.makeText(this,"请输入账号" + password,Toast.LENGTH_SHORT).show();
+        }
+        else if(password.equals("null")){
+            Toast.makeText(this,"该账号未注册，请检查账号是否输入正确" + password,Toast.LENGTH_SHORT).show();
+        }else{
+            Toast.makeText(this,"您的密码是" + password,Toast.LENGTH_SHORT).show();
+        }
+
     }
 }
