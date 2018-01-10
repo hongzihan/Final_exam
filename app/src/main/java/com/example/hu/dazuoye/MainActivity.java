@@ -2,37 +2,55 @@ package com.example.hu.dazuoye;
 
 import android.content.Intent;
 import android.database.sqlite.SQLiteDatabase;
+import android.graphics.Color;
 import android.os.Bundle;
-import android.text.TextUtils;
+import android.os.Handler;
+import android.os.Message;
 import android.view.KeyEvent;
-import android.view.View;
-import android.widget.EditText;
+import android.view.Menu;
+import android.view.ViewGroup;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.hu.dazuoye.charset.CO2Activity;
+import com.example.hu.dazuoye.charset.HumidityActivity;
+import com.example.hu.dazuoye.charset.PM25Activity;
+import com.example.hu.dazuoye.charset.RoadwayActivity;
+import com.example.hu.dazuoye.charset.SunlightActivity;
+import com.example.hu.dazuoye.charset.TemperatureActivity;
 import com.example.hu.dazuoye.db.UserSqliteOpenHelper;
 import com.example.hu.dazuoye.db.dao.UserDao;
+
+import org.achartengine.GraphicalView;
+
+import java.util.Timer;
+import java.util.TimerTask;
 
 public class MainActivity extends TitleActivity {
 
     private long exit_time;//用于实现按两次back退出
 
-    public boolean onKeyDown(int keyCode, KeyEvent event) {
-        //获取按键并比较两次按back的时间大于2s不退出，否则退出
-        if (keyCode == KeyEvent.KEYCODE_BACK && event.getAction() == KeyEvent.ACTION_DOWN) {
-            if (System.currentTimeMillis() - exit_time > 2000) {
-                Toast.makeText(this, "再按一次退出", Toast.LENGTH_SHORT).show();
-                exit_time = System.currentTimeMillis();
-            } else {
-                finish();
-                System.exit(0);
-            }
+    //六图表
+//    private LinearLayout mTemperatureCurveLayout;
+//    private LinearLayout mHumidityCurveLayout;
+//    private LinearLayout mPM25CurveLayout;
+//    private LinearLayout mCO2CurveLayout;
+//    private LinearLayout mSunlightCurveLayout;
+//    private LinearLayout mRoadwayCurveLayout;
+//
+//    private GraphicalView mTemperatureView, mCO2View, mHumidityView, mPM25View, mRoadwayView, mSunlightView;//
 
-            return true;
-        }
-        return super.onKeyDown(keyCode, event);
-    }
 
+    //六个服务的定义
+//    private ChartService mTemperatureService;
+//    private ChartService mCO2Service;
+//    private ChartService mHumidityService;
+//    private ChartService mPM25Service;
+//    private ChartService mSunlightService;
+//    private ChartService mRoadwayService;
+
+//    private Timer timer;
 
 
     @Override
@@ -68,6 +86,41 @@ public class MainActivity extends TitleActivity {
         main_balance.setText(balance);
 
 
+
+
+
+//        //六个图表--------
+//        mTemperatureCurveLayout = (LinearLayout) findViewById(R.id.chart_temperature);
+//        mCO2CurveLayout = (LinearLayout) findViewById(R.id.chart_co2);
+//
+//        mTemperatureService = new ChartService(this);
+//        mTemperatureService.setXYMultipleSeriesDataset("温度曲线");
+//        mTemperatureService.setXYMultipleSeriesRenderer(100, 100, "温度曲线", "时间", "温度",
+//                Color.RED, Color.RED, Color.RED, Color.BLACK);
+//        mTemperatureView = mTemperatureService.getGraphicalView();
+//
+//        mCO2Service = new ChartService(this);
+//        mCO2Service.setXYMultipleSeriesDataset("CO2曲线");
+//        mCO2Service.setXYMultipleSeriesRenderer(100, 100, "CO2曲线", "时间", "CO2",
+//                Color.RED, Color.RED, Color.RED, Color.BLACK);
+//        mCO2View = mCO2Service.getGraphicalView();
+//
+//        //将左右图表添加到布局容器中
+//        mTemperatureCurveLayout.addView(mTemperatureView, new ViewGroup.LayoutParams(
+//                ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT));
+//        mCO2CurveLayout.addView(mCO2View, new ViewGroup.LayoutParams(
+//                ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT));
+//
+//        timer = new Timer();
+//        timer.schedule(new TimerTask() {
+//            @Override
+//            public void run() {
+//                handler.sendMessage(handler.obtainMessage());
+//            }
+//        }, 10, 5000);
+
+
+
     }
 
 
@@ -82,4 +135,49 @@ public class MainActivity extends TitleActivity {
         startActivity(intent);
 
     }
+
+    public boolean onKeyDown(int keyCode, KeyEvent event) {
+        //获取按键并比较两次按back的时间大于2s不退出，否则退出
+        if (keyCode == KeyEvent.KEYCODE_BACK && event.getAction() == KeyEvent.ACTION_DOWN) {
+            if (System.currentTimeMillis() - exit_time > 2000) {
+                Toast.makeText(this, "再按一次退出", Toast.LENGTH_SHORT).show();
+                exit_time = System.currentTimeMillis();
+            } else {
+                finish();
+                System.exit(0);
+            }
+
+            return true;
+        }
+        return super.onKeyDown(keyCode, event);
+    }
+
+
+
+
+
+//    @Override
+//    public boolean onCreateOptionsMenu(Menu menu) {
+//        getMenuInflater().inflate(R.menu.main, menu);
+//        return true;
+//    }
+//
+//    private int t = 0;
+//    private Handler handler = new Handler() {
+//        @Override
+//        //定时更新图表
+//        public void handleMessage(Message msg) {
+//            mTemperatureService.updateChart(t, Math.random() * 100);
+//            mCO2Service.updateChart(t, Math.random() * 100);
+//            t+=5;
+//        }
+//    };
+//
+//    @Override
+//    protected void onDestroy() {
+//        super.onDestroy();
+//        if (timer != null) {
+//            timer.cancel();
+//        }
+//    }
 }

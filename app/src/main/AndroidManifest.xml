@@ -26,7 +26,12 @@
         <activity android:name=".ReCharge" />
         <activity android:name=".Dialog"/>
         <activity android:name=".EnvironmentIndex"/>
-
+        <activity android:name=".charset.TemperatureActivity"/>
+        <activity android:name=".charset.HumidityActivity"/>
+        <activity android:name=".charset.CO2Activity"/>
+        <activity android:name=".charset.PM25Activity"/>
+        <activity android:name=".charset.SunlightActivity"/>
+        <activity android:name=".charset.RoadwayActivity"/>
     </application>
 
 </manifest>

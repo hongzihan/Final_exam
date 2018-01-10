@@ -1,8 +1,17 @@
 package com.example.hu.dazuoye;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.view.View;
 import android.widget.TextView;
+
+import com.example.hu.dazuoye.charset.CO2Activity;
+import com.example.hu.dazuoye.charset.HumidityActivity;
+import com.example.hu.dazuoye.charset.PM25Activity;
+import com.example.hu.dazuoye.charset.RoadwayActivity;
+import com.example.hu.dazuoye.charset.SunlightActivity;
+import com.example.hu.dazuoye.charset.TemperatureActivity;
 
 
 /**
@@ -41,39 +50,26 @@ public class EnvironmentIndex extends TitleActivity {
     public Integer randomDatas(Integer minnum, Integer maxnum){
         return (int)(minnum+Math.random()*(maxnum-minnum+1));
     }
-//    public Integer randomTemperature(){
-//        Integer minnum = 10;
-//        Integer maxnum = 40;
-//        return (int)(minnum+Math.random()*(maxnum-minnum+1));
-//    }
-//
-//    public Integer randomHumidity(){
-//        Integer minnum = 50;
-//        Integer maxnum = 150;
-//        return (int)(minnum+Math.random()*(maxnum-minnum+1));
-//    }
-//
-//    public Integer randomPM25(){
-//        Integer minnum = 500;
-//        Integer maxnum = 5000;
-//        return (int)(minnum+Math.random()*(maxnum-minnum+1));
-//    }
-//
-//    public Integer randomCO2(){
-//        Integer minnum = 100;
-//        Integer maxnum = 600;
-//        return (int)(minnum+Math.random()*(maxnum-minnum+1));
-//    }
-//
-//    public Integer randomSunLight(){
-//        Integer minnum = 0;
-//        Integer maxnum = 100;
-//        return (int)(minnum+Math.random()*(maxnum-minnum+1));
-//    }
-//
-//    public Integer randomRoadway(){
-//        Integer minnum = 1;
-//        Integer maxnum = 5;
-//        return (int)(minnum+Math.random()*(maxnum-minnum+1));
-//    }
+
+    //六个按钮跳转环境指标图表
+    public void gototemperature(View view){
+        startActivity(new Intent(this,TemperatureActivity.class));
+    }
+    public void gotohumidity(View view){
+        startActivity(new Intent(this, HumidityActivity.class));
+    }
+    public void gotoco2(View view){
+        startActivity(new Intent(this,CO2Activity.class));
+    }
+    public void gotopm25(View view){
+        startActivity(new Intent(this,PM25Activity.class));
+    }
+    public void gotosunlight(View view){
+        startActivity(new Intent(this,SunlightActivity.class));
+    }
+    public void gotoroadway(View view){
+        startActivity(new Intent(this,RoadwayActivity.class));
+    }
+
+
 }

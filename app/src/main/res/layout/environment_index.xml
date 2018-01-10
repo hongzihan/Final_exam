@@ -43,7 +43,7 @@
                     android:layout_height="75dp"
                     android:layout_margin="5dp"
                     android:background="@drawable/pay_btn_click"
-                    android:onClick="reCharge"
+                    android:onClick="gototemperature"
                     android:text=""
                     android:textSize="22sp" />
 
@@ -53,7 +53,7 @@
                     android:layout_height="75dp"
                     android:layout_margin="5dp"
                     android:background="@drawable/pay_btn_click"
-                    android:onClick="reCharge"
+                    android:onClick="gotohumidity"
                     android:text=""
                     android:textSize="22sp" />
 
@@ -63,7 +63,7 @@
                     android:layout_height="75dp"
                     android:layout_margin="5dp"
                     android:background="@drawable/pay_btn_click"
-                    android:onClick="reCharge"
+                    android:onClick="gotopm25"
                     android:text=""
                     android:textSize="22sp" />
             </TableRow>
@@ -76,7 +76,7 @@
                     android:layout_height="75dp"
                     android:layout_margin="5dp"
                     android:background="@drawable/pay_btn_click"
-                    android:onClick="reCharge"
+                    android:onClick="gotoco2"
                     android:text=""
                     android:textSize="22sp" />
 
@@ -86,7 +86,7 @@
                     android:layout_height="75dp"
                     android:layout_margin="5dp"
                     android:background="@drawable/pay_btn_click"
-                    android:onClick="reCharge"
+                    android:onClick="gotosunlight"
                     android:text=""
                     android:textSize="22sp" />
 
@@ -96,7 +96,7 @@
                     android:layout_height="75dp"
                     android:layout_margin="5dp"
                     android:background="@drawable/pay_btn_click"
-                    android:onClick="reCharge"
+                    android:onClick="gotoroadway"
                     android:text=""
                     android:textSize="22sp" />
             </TableRow>
