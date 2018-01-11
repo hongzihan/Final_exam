@@ -100,12 +100,7 @@ public class MainActivity extends TitleActivity {
         return super.onKeyDown(keyCode, event);
     }
 
-    public void set_btn (View view){
-        AlertDialog alertDialog = new AlertDialog.Builder(this).create();
-        alertDialog.show();
-        Window window = alertDialog.getWindow();
-        window.setContentView(R.layout.dialog_minmax);
-    }
+
 
     //CountDownTimer计时器 通过onCreate()的cdt.start()启动
     CountDownTimer cdt = new CountDownTimer(100000, 1000) {

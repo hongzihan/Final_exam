@@ -47,7 +47,7 @@ public class CO2Activity extends TitleActivity {
 
         mCO2Service = new ChartService(this);
         mCO2Service.setXYMultipleSeriesDataset("CO2曲线");
-        mCO2Service.setXYMultipleSeriesRenderer(100, 100, "CO2曲线", "时间", "CO2",
+        mCO2Service.setXYMultipleSeriesRenderer(100, 600, "CO2曲线", "时间", "CO2",
                 Color.RED, Color.RED, Color.RED, Color.BLACK);
         mCO2View = mCO2Service.getGraphicalView();
 
@@ -75,7 +75,7 @@ public class CO2Activity extends TitleActivity {
         @Override
         //定时更新图表
         public void handleMessage(Message msg) {
-            mCO2Service.updateChart(t, Math.random() * 100);
+            mCO2Service.updateChart(t, randomDatas(100,600));
             t+=5;
         }
     };
@@ -86,6 +86,11 @@ public class CO2Activity extends TitleActivity {
         if (timer != null) {
             timer.cancel();
         }
+    }
+
+    //随机函数
+    public Integer randomDatas(Integer minnum, Integer maxnum){
+        return (int)(minnum+Math.random()*(maxnum-minnum+1));
     }
 
 }

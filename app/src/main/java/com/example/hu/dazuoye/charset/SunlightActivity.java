@@ -68,7 +68,7 @@ public class SunlightActivity extends TitleActivity {
         @Override
         //定时更新图表
         public void handleMessage(Message msg) {
-            mSunlightService.updateChart(t, Math.random() * 100);
+            mSunlightService.updateChart(t, randomDatas(0,100));
             t+=5;
         }
     };
@@ -81,6 +81,9 @@ public class SunlightActivity extends TitleActivity {
         }
     }
 
-
+    //随机函数
+    public Integer randomDatas(Integer minnum, Integer maxnum){
+        return (int)(minnum+Math.random()*(maxnum-minnum+1));
+    }
 
 }

@@ -49,7 +49,7 @@ public class TemperatureActivity extends TitleActivity {
 
         mTemperatureService = new ChartService(this);
         mTemperatureService.setXYMultipleSeriesDataset("温度曲线");
-        mTemperatureService.setXYMultipleSeriesRenderer(100, 100, "温度曲线", "时间", "温度",
+        mTemperatureService.setXYMultipleSeriesRenderer(100, 40, "温度曲线", "时间", "温度",
                 Color.RED, Color.RED, Color.RED, Color.BLACK);
         mTemperatureView = mTemperatureService.getGraphicalView();
 
@@ -77,7 +77,7 @@ public class TemperatureActivity extends TitleActivity {
         @Override
         //定时更新图表
         public void handleMessage(Message msg) {
-            mTemperatureService.updateChart(t, Math.random() * 100);
+            mTemperatureService.updateChart(t, randomDatas(10,40));
             t+=5;
         }
     };
@@ -88,5 +88,10 @@ public class TemperatureActivity extends TitleActivity {
         if (timer != null) {
             timer.cancel();
         }
+    }
+
+    //随机函数
+    public Integer randomDatas(Integer minnum, Integer maxnum){
+        return (int)(minnum+Math.random()*(maxnum-minnum+1));
     }
 }

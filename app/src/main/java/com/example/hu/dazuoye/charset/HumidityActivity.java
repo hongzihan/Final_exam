@@ -41,7 +41,7 @@ public class HumidityActivity extends TitleActivity{
 
         mHumidityService = new ChartService(this);
         mHumidityService.setXYMultipleSeriesDataset("Humidity曲线");
-        mHumidityService.setXYMultipleSeriesRenderer(100, 100, "Humidity曲线", "时间", "湿度",
+        mHumidityService.setXYMultipleSeriesRenderer(100, 150, "Humidity曲线", "时间", "湿度",
                 Color.RED, Color.RED, Color.RED, Color.BLACK);
         mHumidityView = mHumidityService.getGraphicalView();
 
@@ -69,7 +69,7 @@ public class HumidityActivity extends TitleActivity{
         @Override
         //定时更新图表
         public void handleMessage(Message msg) {
-            mHumidityService.updateChart(t, Math.random() * 100);
+            mHumidityService.updateChart(t, randomDatas(50,150));
             t+=5;
         }
     };
@@ -80,5 +80,10 @@ public class HumidityActivity extends TitleActivity{
         if (timer != null) {
             timer.cancel();
         }
+    }
+
+    //随机函数
+    public Integer randomDatas(Integer minnum, Integer maxnum){
+        return (int)(minnum+Math.random()*(maxnum-minnum+1));
     }
 }

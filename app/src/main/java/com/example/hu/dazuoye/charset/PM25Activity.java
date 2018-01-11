@@ -40,7 +40,7 @@ public class PM25Activity extends TitleActivity{
 
         mPM25Service = new ChartService(this);
         mPM25Service.setXYMultipleSeriesDataset("PM25曲线");
-        mPM25Service.setXYMultipleSeriesRenderer(100, 100, "PM25曲线", "时间", "PM2.5",
+        mPM25Service.setXYMultipleSeriesRenderer(100, 5000, "PM25曲线", "时间", "PM2.5",
                 Color.RED, Color.RED, Color.RED, Color.BLACK);
         mPM25View = mPM25Service.getGraphicalView();
 
@@ -68,7 +68,7 @@ public class PM25Activity extends TitleActivity{
         @Override
         //定时更新图表
         public void handleMessage(Message msg) {
-            mPM25Service.updateChart(t, Math.random() * 100);
+            mPM25Service.updateChart(t, randomDatas(500,5000));
             t+=5;
         }
     };
@@ -79,5 +79,10 @@ public class PM25Activity extends TitleActivity{
         if (timer != null) {
             timer.cancel();
         }
+    }
+
+    //随机函数
+    public Integer randomDatas(Integer minnum, Integer maxnum){
+        return (int)(minnum+Math.random()*(maxnum-minnum+1));
     }
 }

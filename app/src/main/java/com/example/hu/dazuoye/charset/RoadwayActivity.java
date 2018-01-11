@@ -40,7 +40,7 @@ public class RoadwayActivity extends TitleActivity {
 
         mRoadwayService = new ChartService(this);
         mRoadwayService.setXYMultipleSeriesDataset("Roadway曲线");
-        mRoadwayService.setXYMultipleSeriesRenderer(100, 100, "Roadway曲线", "时间", "道路状态",
+        mRoadwayService.setXYMultipleSeriesRenderer(100, 5, "Roadway曲线", "时间", "道路状态",
                 Color.RED, Color.RED, Color.RED, Color.BLACK);
         mRoadwayView = mRoadwayService.getGraphicalView();
 
@@ -68,7 +68,7 @@ public class RoadwayActivity extends TitleActivity {
         @Override
         //定时更新图表
         public void handleMessage(Message msg) {
-            mRoadwayService.updateChart(t, Math.random() * 100);
+            mRoadwayService.updateChart(t, randomDatas(1,5));
             t+=5;
         }
     };
@@ -79,5 +79,10 @@ public class RoadwayActivity extends TitleActivity {
         if (timer != null) {
             timer.cancel();
         }
+    }
+
+    //随机函数
+    public Integer randomDatas(Integer minnum, Integer maxnum){
+        return (int)(minnum+Math.random()*(maxnum-minnum+1));
     }
 }
