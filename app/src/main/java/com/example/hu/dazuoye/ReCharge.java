@@ -3,6 +3,7 @@ package com.example.hu.dazuoye;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -77,7 +78,9 @@ public class ReCharge extends TitleActivity {
         switch (view.getId()) {
             case R.id.pay_btn_10:
                 Integer pay_btn_10 = 10;
-                if(udao.findBalance(account)+10 > 5000){
+                if(TextUtils.isEmpty(account)){
+                    Toast.makeText(this,"请先输入您需要充值的手机账号",Toast.LENGTH_SHORT).show();
+                }else if(udao.findBalance(account)+10 > 5000){
                     Toast.makeText(this, "余额上限为5000，充值失败", Toast.LENGTH_SHORT).show();
                 }
                 else{
@@ -87,7 +90,9 @@ public class ReCharge extends TitleActivity {
                 break;
             case R.id.pay_btn_20:
                 Integer pay_btn_20 = 20;
-                if(udao.findBalance(account)+20 > 5000){
+                if(TextUtils.isEmpty(account)){
+                    Toast.makeText(this,"请先输入您需要充值的手机账号",Toast.LENGTH_SHORT).show();
+                }else if(udao.findBalance(account)+20 > 5000){
                     Toast.makeText(this, "余额上限为5000，充值失败", Toast.LENGTH_SHORT).show();
                 }else{
                     udao.reCharge(account, pay_btn_20);
@@ -97,7 +102,9 @@ public class ReCharge extends TitleActivity {
                 break;
             case R.id.pay_btn_30:
                 Integer pay_btn_30 = 30;
-                if(udao.findBalance(account)+30 > 5000){
+                if(TextUtils.isEmpty(account)){
+                    Toast.makeText(this,"请先输入您需要充值的手机账号",Toast.LENGTH_SHORT).show();
+                }else if(udao.findBalance(account)+30 > 5000){
                     Toast.makeText(this, "余额上限为5000，充值失败", Toast.LENGTH_SHORT).show();
                 }else{
                     udao.reCharge(account, pay_btn_30);
@@ -107,7 +114,9 @@ public class ReCharge extends TitleActivity {
                 break;
             case R.id.pay_btn_50:
                 Integer pay_btn_50 = 50;
-                if(udao.findBalance(account)+50 > 5000){
+                if(TextUtils.isEmpty(account)){
+                    Toast.makeText(this,"请先输入您需要充值的手机账号",Toast.LENGTH_SHORT).show();
+                }else if(udao.findBalance(account)+50 > 5000){
                     Toast.makeText(this, "余额上限为5000，充值失败", Toast.LENGTH_SHORT).show();
                 }else{
                     udao.reCharge(account, pay_btn_50);
@@ -117,7 +126,9 @@ public class ReCharge extends TitleActivity {
                 break;
             case R.id.pay_btn_100:
                 Integer pay_btn_100 = 100;
-                if(udao.findBalance(account)+100 > 5000) {
+                if(TextUtils.isEmpty(account)){
+                    Toast.makeText(this,"请先输入您需要充值的手机账号",Toast.LENGTH_SHORT).show();
+                }else if(udao.findBalance(account)+100 > 5000) {
                     Toast.makeText(this, "余额上限为5000，充值失败", Toast.LENGTH_SHORT).show();
                 }else{
                     udao.reCharge(account, pay_btn_100);
@@ -127,7 +138,9 @@ public class ReCharge extends TitleActivity {
                 break;
             case R.id.pay_btn_200:
                 Integer pay_btn_200 = 200;
-                if(udao.findBalance(account)+200 > 5000){
+                if(TextUtils.isEmpty(account)){
+                    Toast.makeText(this,"请先输入您需要充值的手机账号",Toast.LENGTH_SHORT).show();
+                }else if(udao.findBalance(account)+200 > 5000){
                     Toast.makeText(this, "余额上限为5000，充值失败", Toast.LENGTH_SHORT).show();
                 }else{
                     udao.reCharge(account, pay_btn_200);
@@ -137,7 +150,9 @@ public class ReCharge extends TitleActivity {
                 break;
             case R.id.pay_btn_300:
                 Integer pay_btn_300 = 300;
-                if(udao.findBalance(account)+300 > 5000){
+                if(TextUtils.isEmpty(account)){
+                    Toast.makeText(this,"请先输入您需要充值的手机账号",Toast.LENGTH_SHORT).show();
+                }else if(udao.findBalance(account)+300 > 5000){
                     Toast.makeText(this, "余额上限为5000，充值失败", Toast.LENGTH_SHORT).show();
                 }else{
                     udao.reCharge(account, pay_btn_300);
@@ -147,7 +162,9 @@ public class ReCharge extends TitleActivity {
                 break;
             case R.id.pay_btn_500:
                 Integer pay_btn_500 = 500;
-                if(udao.findBalance(account)+500 > 5000){
+                if(TextUtils.isEmpty(account)){
+                    Toast.makeText(this,"请先输入您需要充值的手机账号",Toast.LENGTH_SHORT).show();
+                }else if(udao.findBalance(account)+500 > 5000){
                     Toast.makeText(this, "余额上限为5000，充值失败", Toast.LENGTH_SHORT).show();
                 }else{
                     udao.reCharge(account, pay_btn_500);
@@ -157,7 +174,9 @@ public class ReCharge extends TitleActivity {
                 break;
             case R.id.pay_btn_1000:
                 Integer pay_btn_1000 = 1000;
-                if(udao.findBalance(account)+1000 > 5000){
+                if(TextUtils.isEmpty(account)){
+                    Toast.makeText(this,"请先输入您需要充值的手机账号",Toast.LENGTH_SHORT).show();
+                }else if(udao.findBalance(account)+1000 > 5000){
                     Toast.makeText(this, "余额上限为5000，充值失败", Toast.LENGTH_SHORT).show();
                 }else{
                     udao.reCharge(account, pay_btn_1000);
