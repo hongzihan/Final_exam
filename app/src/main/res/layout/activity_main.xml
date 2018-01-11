@@ -81,6 +81,7 @@
                     android:textSize="18dp"
                     android:textColor="#000"
                     android:paddingLeft="5dp"/>
+
             </TableRow>
 
             <TableRow>

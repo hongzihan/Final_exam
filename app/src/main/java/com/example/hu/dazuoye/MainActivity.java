@@ -4,7 +4,10 @@ import android.content.Intent;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.os.CountDownTimer;
+import android.support.v7.app.AlertDialog;
 import android.view.KeyEvent;
+import android.view.View;
+import android.view.Window;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -97,7 +100,12 @@ public class MainActivity extends TitleActivity {
         return super.onKeyDown(keyCode, event);
     }
 
-
+    public void set_btn (View view){
+        AlertDialog alertDialog = new AlertDialog.Builder(this).create();
+        alertDialog.show();
+        Window window = alertDialog.getWindow();
+        window.setContentView(R.layout.dialog_minmax);
+    }
 
     //CountDownTimer计时器 通过onCreate()的cdt.start()启动
     CountDownTimer cdt = new CountDownTimer(100000, 1000) {

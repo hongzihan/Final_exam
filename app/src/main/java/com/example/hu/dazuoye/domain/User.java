@@ -14,6 +14,26 @@ public class User{
     private static String password;
     private static Integer balance;
     private static Integer id;
+    private static String minSpeed;
+    private static String maxSpeed;
+
+
+    public static String getMinSpeed() {
+        return minSpeed;
+    }
+
+    public static void setMinSpeed(String minSpeed) {
+        User.minSpeed = minSpeed;
+    }
+
+    public static String getMaxSpeed() {
+        return maxSpeed;
+    }
+
+    public static void setMaxSpeed(String maxSpeed) {
+        User.maxSpeed = maxSpeed;
+    }
+
 
 
     public static String getAccount() {
