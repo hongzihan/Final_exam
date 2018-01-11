@@ -1,4 +1,4 @@
-package com.example.hu.dazuoye;
+package com.example.hu.dazuoye.ui;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -7,15 +7,13 @@ import android.support.annotation.Nullable;
 import android.view.View;
 import android.widget.TextView;
 
+import com.example.hu.dazuoye.R;
 import com.example.hu.dazuoye.charset.CO2Activity;
 import com.example.hu.dazuoye.charset.HumidityActivity;
 import com.example.hu.dazuoye.charset.PM25Activity;
 import com.example.hu.dazuoye.charset.RoadwayActivity;
 import com.example.hu.dazuoye.charset.SunlightActivity;
 import com.example.hu.dazuoye.charset.TemperatureActivity;
-
-import java.util.Timer;
-import java.util.TimerTask;
 
 
 /**

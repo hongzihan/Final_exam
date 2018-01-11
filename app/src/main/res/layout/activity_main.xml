@@ -18,6 +18,7 @@
             android:layout_marginStart="8dp"
             android:background="@color/white"
             android:stretchColumns="2"
+            android:shrinkColumns="0"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -30,35 +31,36 @@
                     android:text="欢迎使用智能交通系统"
                     android:textSize="26sp"/>
             </TableRow>
-            <TableRow>
-                <TextView
-                    android:layout_span="3"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text=" "
-                    android:textSize="26sp"/>
-            </TableRow>
+            <!--<TableRow>-->
+                <!--<TextView-->
+                    <!--android:layout_span="3"-->
+                    <!--android:layout_width="match_parent"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:text=" "-->
+                    <!--android:textSize="26sp"/>-->
+            <!--</TableRow>-->
+
+            <!--<TableRow>-->
+                <!--<TextView-->
+                    <!--android:layout_span="3"-->
+                    <!--android:layout_width="match_parent"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:text=" "-->
+                    <!--android:textSize="26sp"/>-->
+            <!--</TableRow>-->
+            <!--<TableRow>-->
+                <!--<TextView-->
+                    <!--android:layout_span="3"-->
+                    <!--android:layout_width="match_parent"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:text=" "-->
+                    <!--android:textSize="26sp"/>-->
+            <!--</TableRow>-->
+
+
 
             <TableRow>
-                <TextView
-                    android:layout_span="3"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text=" "
-                    android:textSize="26sp"/>
-            </TableRow>
-            <TableRow>
-                <TextView
-                    android:layout_span="3"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text=" "
-                    android:textSize="26sp"/>
-            </TableRow>
 
-            <TableRow>
-                <TextView
-                    android:layout_width="10dp"/>
 
                 <TextView
 
@@ -66,11 +68,84 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:paddingLeft="5dp"
-                    android:text="当前车速:"
+                    android:text="用户名:"
+                    android:textColor="#000"
+                    android:textSize="15dp"
+                    android:textStyle="bold"
+                    android:textAlignment="viewEnd"/>
+                <TextView
+                    android:id="@+id/main_username"
+                    android:layout_weight="1"
+                    android:layout_span="3"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="未知"
+                    android:textSize="15dp"
+                    android:textColor="#000"
+                    android:paddingLeft="5dp"/>
+            </TableRow>
+            <TableRow>
+
+                <TextView
+
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:paddingLeft="5dp"
+                    android:text="账号:"
+                    android:textColor="#000"
+                    android:textSize="15dp"
+                    android:textStyle="bold"
+                    android:textAlignment="viewEnd"/>
+                <TextView
+                    android:id="@+id/main_account"
+                    android:layout_weight="1"
+                    android:layout_span="3"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="未知"
+                    android:textSize="15dp"
+                    android:textColor="#000"
+                    android:paddingLeft="5dp"/>
+            </TableRow>
+            <TableRow>
+
+                <TextView
+
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:paddingLeft="5dp"
+                    android:text="账户余额:"
+                    android:textColor="#000"
+                    android:textSize="15dp"
+                    android:textStyle="bold"
+                    android:textAlignment="viewEnd"/>
+                <TextView
+                    android:id="@+id/main_balance"
+                    android:layout_weight="1"
+                    android:layout_span="3"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="未知"
+                    android:textSize="15dp"
+                    android:textColor="#000"
+                    android:paddingLeft="5dp"/>
+            </TableRow>
+
+            <TableRow>
+
+                <TextView
+
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:paddingLeft="5dp"
+                    android:text="car1车速:"
                     android:textColor="#000"
                     android:textSize="20dp"
                     android:textStyle="bold"
-                    android:textAlignment="viewEnd"/>
+                    android:textAlignment="viewEnd" />
                 <TextView
                     android:id="@+id/main_carSpeed"
                     android:layout_weight="1"
@@ -81,12 +156,14 @@
                     android:textSize="18dp"
                     android:textColor="#000"
                     android:paddingLeft="5dp"/>
-
+                <Button
+                    android:background="#ffffffff"
+                    android:text="设置"
+                    android:onClick="set_btn"
+                    android:layout_width="60dp"
+                    android:layout_height="wrap_content"/>
             </TableRow>
-
             <TableRow>
-                <TextView
-                    android:layout_width="10dp"/>
 
                 <TextView
 
@@ -94,25 +171,29 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:paddingLeft="5dp"
-                    android:text="用户名:"
+                    android:text="car2车速:"
                     android:textColor="#000"
                     android:textSize="20dp"
                     android:textStyle="bold"
-                    android:textAlignment="viewEnd"/>
+                    android:textAlignment="viewEnd" />
                 <TextView
-                    android:id="@+id/main_username"
+                    android:id="@+id/main_car2Speed"
                     android:layout_weight="1"
                     android:layout_span="3"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="未知"
-                    android:textSize="20dp"
+                    android:textSize="18dp"
                     android:textColor="#000"
                     android:paddingLeft="5dp"/>
+                <Button
+                    android:background="#ffffffff"
+                    android:text="设置"
+                    android:onClick="set_btn"
+                    android:layout_width="60dp"
+                    android:layout_height="wrap_content"/>
             </TableRow>
             <TableRow>
-                <TextView
-                    android:layout_width="10dp"/>
 
                 <TextView
 
@@ -120,25 +201,29 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:paddingLeft="5dp"
-                    android:text="账号:"
+                    android:text="car3车速:"
                     android:textColor="#000"
                     android:textSize="20dp"
                     android:textStyle="bold"
-                    android:textAlignment="viewEnd"/>
+                    android:textAlignment="viewEnd" />
                 <TextView
-                    android:id="@+id/main_account"
+                    android:id="@+id/main_car3Speed"
                     android:layout_weight="1"
                     android:layout_span="3"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="未知"
-                    android:textSize="20dp"
+                    android:textSize="18dp"
                     android:textColor="#000"
                     android:paddingLeft="5dp"/>
+                <Button
+                    android:background="#ffffffff"
+                    android:text="设置"
+                    android:onClick="set_btn"
+                    android:layout_width="60dp"
+                    android:layout_height="wrap_content"/>
             </TableRow>
             <TableRow>
-                <TextView
-                    android:layout_width="10dp"/>
 
                 <TextView
 
@@ -146,19 +231,71 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:paddingLeft="5dp"
-                    android:text="账户余额:"
+                    android:text="car4车速:"
                     android:textColor="#000"
                     android:textSize="20dp"
                     android:textStyle="bold"
-                    android:textAlignment="viewEnd"/>
+                    android:textAlignment="viewEnd" />
                 <TextView
-                    android:id="@+id/main_balance"
+                    android:id="@+id/main_car4Speed"
                     android:layout_weight="1"
                     android:layout_span="3"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="未知"
-                    android:textSize="20dp"
+                    android:textSize="18dp"
+                    android:textColor="#000"
+                    android:paddingLeft="5dp"/>
+                <Button
+                    android:background="#ffffffff"
+                    android:text="设置"
+                    android:onClick="set_btn"
+                    android:layout_width="60dp"
+                    android:layout_height="wrap_content"/>
+            </TableRow>
+            <TableRow>
+
+                <TextView
+
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:paddingLeft="5dp"
+                    android:text="最大速度:"
+                    android:textColor="#000"
+                    android:textSize="15dp"
+                    android:textStyle="bold"
+                    android:textAlignment="viewEnd" />
+                <TextView
+                    android:id="@+id/main_maxLimit"
+                    android:layout_weight="1"
+                    android:layout_span="1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="未知"
+                    android:textSize="13dp"
+                    android:textColor="#000"
+                    android:paddingLeft="5dp"/>
+
+                <TextView
+
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:paddingLeft="5dp"
+                    android:text="最小速度:"
+                    android:textAlignment="viewEnd"
+                    android:textColor="#000"
+                    android:textSize="15dp"
+                    android:textStyle="bold" />
+                <TextView
+                    android:id="@+id/main_smallLimit"
+                    android:layout_weight="1"
+                    android:layout_span="1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="未知"
+                    android:textSize="13dp"
                     android:textColor="#000"
                     android:paddingLeft="5dp"/>
             </TableRow>

@@ -10,9 +10,9 @@ import android.view.ViewGroup;
 import android.widget.LinearLayout;
 
 
-import com.example.hu.dazuoye.ChartService;
+import com.example.hu.dazuoye.service.ChartService;
 import com.example.hu.dazuoye.R;
-import com.example.hu.dazuoye.TitleActivity;
+import com.example.hu.dazuoye.ui.TitleActivity;
 
 import org.achartengine.GraphicalView;
 

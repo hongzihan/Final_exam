@@ -1,4 +1,4 @@
-package com.example.hu.dazuoye;
+package com.example.hu.dazuoye.service;
 
 import java.util.List;
 

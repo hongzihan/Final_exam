@@ -4,16 +4,15 @@ import android.content.Intent;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.os.CountDownTimer;
-import android.support.v7.app.AlertDialog;
 import android.view.KeyEvent;
 import android.view.View;
-import android.view.Window;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.hu.dazuoye.db.UserSqliteOpenHelper;
 import com.example.hu.dazuoye.db.dao.UserDao;
 import com.example.hu.dazuoye.domain.User;
+import com.example.hu.dazuoye.ui.TitleActivity;
 
 public class MainActivity extends TitleActivity {
 
@@ -100,6 +99,10 @@ public class MainActivity extends TitleActivity {
         return super.onKeyDown(keyCode, event);
     }
 
+    public void set_btn(View view){
+        startActivity(new Intent(this,MinMax.class));
+    }
+
 
 
     //CountDownTimer计时器 通过onCreate()的cdt.start()启动
@@ -107,13 +110,17 @@ public class MainActivity extends TitleActivity {
         @Override
         public void onTick(long millisUntilFinished) {
             TextView main_carSpeed = (TextView)findViewById(R.id.main_carSpeed);
-            main_carSpeed.setText(randomDatas(0,120) + "km/h" + "最高车速为120km/h");
+            if(User.getSpeedLimitFlag() == -1){
+                main_carSpeed.setText(randomDatas(0,120) + "km/h" + "最高车速为120km/h");
+            }else{
+                main_carSpeed.setText(randomDatas(User.getMinSpeed(),User.getMaxSpeed()) + "km/h" + "最高车速为120km/h");
+            }
+
         }
         @Override
         public void onFinish() {
 
         }
     };
-
 
 }

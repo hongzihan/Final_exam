@@ -20,18 +20,19 @@
             </intent-filter>
         </activity>
         <activity android:name=".MainActivity" />
-        <activity android:name=".Login" android:windowSoftInputMode="adjustResize|stateHidden"/>
-        <activity android:name=".Register" />
-        <activity android:name=".TitleActivity" />
-        <activity android:name=".ReCharge" />
+        <activity android:name=".ui.Login" android:windowSoftInputMode="adjustResize|stateHidden"/>
+        <activity android:name=".ui.Register" />
+        <activity android:name=".ui.TitleActivity" />
+        <activity android:name=".ui.ReCharge" />
         <activity android:name=".Dialog"/>
-        <activity android:name=".EnvironmentIndex"/>
+        <activity android:name=".ui.EnvironmentIndex"/>
         <activity android:name=".charset.TemperatureActivity"/>
         <activity android:name=".charset.HumidityActivity"/>
         <activity android:name=".charset.CO2Activity"/>
         <activity android:name=".charset.PM25Activity"/>
         <activity android:name=".charset.SunlightActivity"/>
         <activity android:name=".charset.RoadwayActivity"/>
+        <activity android:name=".MinMax"/>
     </application>
 
 </manifest>

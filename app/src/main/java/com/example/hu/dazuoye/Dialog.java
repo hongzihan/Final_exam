@@ -2,11 +2,12 @@ package com.example.hu.dazuoye;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.os.PersistableBundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
-import android.widget.Toast;
+
+import com.example.hu.dazuoye.ui.Login;
+import com.example.hu.dazuoye.ui.Register;
 
 /**
  * Created by a1398 on 2018/1/9.

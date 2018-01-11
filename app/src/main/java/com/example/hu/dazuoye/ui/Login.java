@@ -1,4 +1,4 @@
-package com.example.hu.dazuoye;
+package com.example.hu.dazuoye.ui;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -10,6 +10,9 @@ import android.view.Window;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.example.hu.dazuoye.Dialog;
+import com.example.hu.dazuoye.MainActivity;
+import com.example.hu.dazuoye.R;
 import com.example.hu.dazuoye.db.dao.UserDao;
 import com.example.hu.dazuoye.domain.User;
 

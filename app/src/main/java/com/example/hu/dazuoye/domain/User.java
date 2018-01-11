@@ -16,23 +16,40 @@ public class User{
     private static Integer id;
     private static String minSpeed;
     private static String maxSpeed;
+    private static int speedLimitFlag = -1;
 
+    public static int getSpeedLimitFlag() {
+        return speedLimitFlag;
+    }
 
-    public static String getMinSpeed() {
-        return minSpeed;
+    public static void setSpeedLimitFlag(int speedLimitFlag) {
+        User.speedLimitFlag = speedLimitFlag;
+    }
+
+    public static Integer getMinSpeed() {
+        return Integer.parseInt(minSpeed);
     }
 
     public static void setMinSpeed(String minSpeed) {
         User.minSpeed = minSpeed;
     }
 
-    public static String getMaxSpeed() {
-        return maxSpeed;
+    public static Integer getMaxSpeed() {
+        return Integer.parseInt(maxSpeed);
     }
 
     public static void setMaxSpeed(String maxSpeed) {
         User.maxSpeed = maxSpeed;
     }
+
+
+
+
+
+
+
+
+
 
 
 

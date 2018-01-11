@@ -1,4 +1,4 @@
-package com.example.hu.dazuoye;
+package com.example.hu.dazuoye.ui;
 
 import android.app.Activity;
 import android.app.ActivityManager;
@@ -13,6 +13,11 @@ import android.widget.FrameLayout;
 import android.widget.ImageButton;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+
+import com.example.hu.dazuoye.MainActivity;
+import com.example.hu.dazuoye.R;
+import com.example.hu.dazuoye.ui.EnvironmentIndex;
+import com.example.hu.dazuoye.ui.ReCharge;
 
 import java.util.List;
 
