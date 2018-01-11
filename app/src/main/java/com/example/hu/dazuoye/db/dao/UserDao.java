@@ -112,7 +112,7 @@ public class UserDao {
         return username;
     }
     //检查密码是否正确
-    public String CheckPassword(String password){
+    public String checkPassword(String password){
 
         //获得一个可读的数据库
         SQLiteDatabase db = helper.getReadableDatabase();
@@ -167,7 +167,25 @@ public class UserDao {
 
 
 
+    public Integer recheckAccount(String account){
 
+        //获得一个可读的数据库
+        SQLiteDatabase db = helper.getReadableDatabase();
+
+//        db.execSQL("select * from user where username=?", new Object[]{username});
+
+        Cursor cursor = db.rawQuery("select account from user where account=?", new String[]{account});
+
+        Integer reaccount = -1;
+        if(cursor.moveToNext()){
+            reaccount = cursor.getInt(0);
+            if(reaccount > 0){
+                reaccount = 0;
+            }
+        }
+
+        return reaccount;
+    }
 
 
 }

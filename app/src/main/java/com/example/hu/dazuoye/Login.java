@@ -8,7 +8,6 @@ import android.view.KeyEvent;
 import android.view.View;
 import android.view.Window;
 import android.widget.EditText;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.hu.dazuoye.db.dao.UserDao;
@@ -64,7 +63,7 @@ public class Login extends Dialog {
             window.setContentView(R.layout.dialog_login);
             Toast.makeText(this,"请检查账号或者密码是否为空！", Toast.LENGTH_SHORT).show();
         }else{
-            if(account.equals(udao.checkAccount(account)) && password.equals(udao.CheckPassword(password))){
+            if(account.equals(udao.checkAccount(account)) && password.equals(udao.checkPassword(password))){
                 //向MainActivity传递数据
                 Intent intent = new Intent();
 
@@ -95,11 +94,12 @@ public class Login extends Dialog {
         String account = login_account.getText().toString().trim();
         UserDao udao = new UserDao(this);
         String password = udao.findPassword(account);
+        Integer check = udao.recheckAccount(account);
+
         if(TextUtils.isEmpty(account)){
-            Toast.makeText(this,"请输入账号" + password,Toast.LENGTH_SHORT).show();
-        }
-        else if(password.equals("null")){
-            Toast.makeText(this,"该账号未注册，请检查账号是否输入正确" + password,Toast.LENGTH_SHORT).show();
+            Toast.makeText(this,"请输入账号",Toast.LENGTH_SHORT).show();
+        }else if(check.equals(-1)){
+            Toast.makeText(this,"该账号未注册，请检查账号是否输入正确",Toast.LENGTH_SHORT).show();
         }else{
             Toast.makeText(this,"您的密码是" + password,Toast.LENGTH_SHORT).show();
         }
