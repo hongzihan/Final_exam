@@ -151,6 +151,7 @@ public class TitleActivity extends AppCompatActivity implements View.OnClickList
         lei = get_TopActivity(this);
         //resetImg();
         //mHomeImg.setImageResource(R.drawable.home_1);
+        System.out.println(lei);
         if (lei.equals(".MainActivity")){
 
         }else{
@@ -165,7 +166,8 @@ public class TitleActivity extends AppCompatActivity implements View.OnClickList
 
         String lei = null;
         lei = get_TopActivity(this);
-        if(lei.equals(".Login")){
+        System.out.println(lei);
+        if(lei.equals(".EnvironmentIndex")){
 
         }else {
             startActivity(new Intent(this,EnvironmentIndex.class));
@@ -176,9 +178,9 @@ public class TitleActivity extends AppCompatActivity implements View.OnClickList
 
         String lei = null;
         lei = get_TopActivity(this);
-        //Toast.makeText(this,lei,Toast.LENGTH_SHORT).show();
-        //System.out.println(lei);
         if(lei.equals(".ReCharge") ) {
+
+        //Toast.makeText(this,lei,Toast.LENGTH_SHORT).show();
             //Toast.makeText(this,"butiao",Toast.LENGTH_SHORT).show();
         }else{
             startActivity(new Intent(this, ReCharge.class));

@@ -22,6 +22,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent">
+
             <TableRow>
                 <TextView
                     android:layout_span="3"
@@ -34,6 +35,7 @@
                     android:paddingLeft="5dp"
                     />
             </TableRow>
+
 
             <TableRow>
 

@@ -34,6 +34,7 @@ public class EnvironmentIndex extends TitleActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.environment_index);
         setTitle("环境指标");
+        setBottomImg("left");
         showBackwardView(R.string.text_back,true);
         showEndView(true);
 

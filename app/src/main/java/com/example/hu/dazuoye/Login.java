@@ -11,6 +11,7 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import com.example.hu.dazuoye.db.dao.UserDao;
+import com.example.hu.dazuoye.domain.User;
 
 /**
  * Created by a1398 on 2018/1/5.
@@ -20,6 +21,7 @@ public class Login extends Dialog {
     EditText login_account;
     EditText login_password;
     private long exit_time;//用于实现按两次back退出
+
 
     public boolean onKeyDown(int keyCode, KeyEvent event) {
         //获取按键并比较两次按back的时间大于2s不退出，否则退出
@@ -53,6 +55,8 @@ public class Login extends Dialog {
         String account = login_account.getText().toString().trim();
         String password = login_password.getText().toString().trim();
         UserDao udao = new UserDao(this);
+        String username = udao.findUsername(account);
+        Integer balance = udao.findBalance(account);
         if(TextUtils.isEmpty(account) || TextUtils.isEmpty(password)){
             /*
             * 自定义AlertDialog
@@ -65,15 +69,19 @@ public class Login extends Dialog {
         }else{
             if(account.equals(udao.checkAccount(account)) && password.equals(udao.checkPassword(password))){
                 //向MainActivity传递数据
-                Intent intent = new Intent();
-
+                //Intent intent = new Intent();
 //                String account_user = account;
 //                String account_password = password;
-                intent.putExtra("account",account);
+                //intent.putExtra("account",account);
 
+                //设置全局用户变量
+                User.setAccount(account);
+                User.setPassword(password);
+                User.setUsername(username);
+                User.setBalance(balance);
                 //跳转主界面,登录成功
-                startActivity(intent.setClass(this,MainActivity.class));
-//                startActivity(new Intent(this,MainActivity.class));
+                //startActivity(intent.setClass(this,MainActivity.class));
+                startActivity(new Intent(this,MainActivity.class));
                 Toast.makeText(this,"登录成功！",Toast.LENGTH_SHORT).show();
             }else{
                 //登录失败，账号或者密码错误
