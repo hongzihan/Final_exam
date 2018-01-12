@@ -1,4 +1,4 @@
-package com.example.hu.dazuoye.charset;
+package com.example.hu.finalexam.charset;
 
 import android.graphics.Color;
 import android.os.Bundle;
@@ -8,9 +8,9 @@ import android.view.Menu;
 import android.view.ViewGroup;
 import android.widget.LinearLayout;
 
-import com.example.hu.dazuoye.service.ChartService;
-import com.example.hu.dazuoye.R;
-import com.example.hu.dazuoye.ui.TitleActivity;
+import com.example.hu.finalexam.service.ChartService;
+import com.example.hu.finalexam.R;
+import com.example.hu.finalexam.ui.TitleActivity;
 
 import org.achartengine.GraphicalView;
 

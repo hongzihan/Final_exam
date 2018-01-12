@@ -1,4 +1,4 @@
-package com.example.hu.dazuoye.ui;
+package com.example.hu.finalexam.ui;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -7,13 +7,13 @@ import android.support.annotation.Nullable;
 import android.view.View;
 import android.widget.TextView;
 
-import com.example.hu.dazuoye.R;
-import com.example.hu.dazuoye.charset.CO2Activity;
-import com.example.hu.dazuoye.charset.HumidityActivity;
-import com.example.hu.dazuoye.charset.PM25Activity;
-import com.example.hu.dazuoye.charset.RoadwayActivity;
-import com.example.hu.dazuoye.charset.SunlightActivity;
-import com.example.hu.dazuoye.charset.TemperatureActivity;
+import com.example.hu.finalexam.R;
+import com.example.hu.finalexam.charset.CO2Activity;
+import com.example.hu.finalexam.charset.HumidityActivity;
+import com.example.hu.finalexam.charset.PM25Activity;
+import com.example.hu.finalexam.charset.RoadwayActivity;
+import com.example.hu.finalexam.charset.SunlightActivity;
+import com.example.hu.finalexam.charset.TemperatureActivity;
 
 
 /**

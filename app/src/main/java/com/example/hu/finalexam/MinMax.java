@@ -1,4 +1,4 @@
-package com.example.hu.dazuoye;
+package com.example.hu.finalexam;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -7,8 +7,8 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 
-import com.example.hu.dazuoye.domain.User;
-import com.example.hu.dazuoye.ui.TitleActivity;
+import com.example.hu.finalexam.domain.User;
+import com.example.hu.finalexam.ui.TitleActivity;
 
 /**
  * Created by a1398 on 2018/1/11.

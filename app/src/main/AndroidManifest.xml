@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.hu.dazuoye">
+    package="com.example.hu.finalexam">
 
     
     <application
@@ -12,27 +12,27 @@
         android:theme="@style/Theme.AppCompat.DayNight.NoActionBar">
 
         <uses-library android:name="android.test.runner"/>
-        <activity android:name=".Loading">
+        <activity android:name="com.example.hu.finalexam.Loading">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".MainActivity" />
-        <activity android:name=".ui.Login" android:windowSoftInputMode="adjustResize|stateHidden"/>
-        <activity android:name=".ui.Register" />
-        <activity android:name=".ui.TitleActivity" />
-        <activity android:name=".ui.ReCharge" />
-        <activity android:name=".Dialog"/>
-        <activity android:name=".ui.EnvironmentIndex"/>
-        <activity android:name=".charset.TemperatureActivity"/>
-        <activity android:name=".charset.HumidityActivity"/>
-        <activity android:name=".charset.CO2Activity"/>
-        <activity android:name=".charset.PM25Activity"/>
-        <activity android:name=".charset.SunlightActivity"/>
-        <activity android:name=".charset.RoadwayActivity"/>
-        <activity android:name=".MinMax"/>
+        <activity android:name="com.example.hu.finalexam.MainActivity" />
+        <activity android:name="com.example.hu.finalexam.ui.Login" android:windowSoftInputMode="adjustResize|stateHidden"/>
+        <activity android:name="com.example.hu.finalexam.ui.Register" />
+        <activity android:name="com.example.hu.finalexam.ui.TitleActivity" />
+        <activity android:name="com.example.hu.finalexam.ui.ReCharge" />
+        <activity android:name="com.example.hu.finalexam.Dialog"/>
+        <activity android:name="com.example.hu.finalexam.ui.EnvironmentIndex"/>
+        <activity android:name="com.example.hu.finalexam.charset.TemperatureActivity"/>
+        <activity android:name="com.example.hu.finalexam.charset.HumidityActivity"/>
+        <activity android:name="com.example.hu.finalexam.charset.CO2Activity"/>
+        <activity android:name="com.example.hu.finalexam.charset.PM25Activity"/>
+        <activity android:name="com.example.hu.finalexam.charset.SunlightActivity"/>
+        <activity android:name="com.example.hu.finalexam.charset.RoadwayActivity"/>
+        <activity android:name="com.example.hu.finalexam.MinMax"/>
     </application>
 
 </manifest>

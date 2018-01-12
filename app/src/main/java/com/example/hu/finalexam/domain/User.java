@@ -1,8 +1,4 @@
-package com.example.hu.dazuoye.domain;
-
-import android.app.Application;
-
-import com.example.hu.dazuoye.db.dao.UserDao;
+package com.example.hu.finalexam.domain;
 
 /**
  * Created by ken on 2018/1/11.
@@ -18,9 +14,12 @@ public class User{
     private static String maxSpeed;
     private static int speedLimitFlag = -1;
 
+
+
     public static int getSpeedLimitFlag() {
         return speedLimitFlag;
     }
+
 
     public static void setSpeedLimitFlag(int speedLimitFlag) {
         User.speedLimitFlag = speedLimitFlag;

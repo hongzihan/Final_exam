@@ -1,11 +1,11 @@
 
-package com.example.hu.dazuoye.db.dao;
+package com.example.hu.finalexam.db.dao;
 
 import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 
-import com.example.hu.dazuoye.db.UserSqliteOpenHelper;
+import com.example.hu.finalexam.db.UserSqliteOpenHelper;
 
 /**
  * Created by ken on 2018/1/6.

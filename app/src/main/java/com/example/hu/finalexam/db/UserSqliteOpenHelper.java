@@ -1,4 +1,4 @@
-package com.example.hu.dazuoye.db;
+package com.example.hu.finalexam.db;
 
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;

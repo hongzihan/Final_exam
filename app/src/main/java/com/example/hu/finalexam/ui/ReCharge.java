@@ -1,4 +1,4 @@
-package com.example.hu.dazuoye.ui;
+package com.example.hu.finalexam.ui;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -8,9 +8,9 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.example.hu.dazuoye.R;
-import com.example.hu.dazuoye.db.dao.UserDao;
-import com.example.hu.dazuoye.domain.User;
+import com.example.hu.finalexam.R;
+import com.example.hu.finalexam.db.dao.UserDao;
+import com.example.hu.finalexam.domain.User;
 
 /**
  * Created by a1398 on 2018/1/6.

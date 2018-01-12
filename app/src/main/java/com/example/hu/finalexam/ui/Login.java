@@ -1,4 +1,4 @@
-package com.example.hu.dazuoye.ui;
+package com.example.hu.finalexam.ui;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -10,11 +10,12 @@ import android.view.Window;
 import android.widget.EditText;
 import android.widget.Toast;
 
-import com.example.hu.dazuoye.Dialog;
-import com.example.hu.dazuoye.MainActivity;
-import com.example.hu.dazuoye.R;
-import com.example.hu.dazuoye.db.dao.UserDao;
-import com.example.hu.dazuoye.domain.User;
+import com.example.hu.finalexam.Dialog;
+import com.example.hu.finalexam.MainActivity;
+import com.example.hu.finalexam.R;
+import com.example.hu.finalexam.db.dao.UserDao;
+import com.example.hu.finalexam.domain.CheckLogin;
+import com.example.hu.finalexam.domain.User;
 
 /**
  * Created by a1398 on 2018/1/5.
@@ -82,6 +83,10 @@ public class Login extends Dialog {
                 User.setPassword(password);
                 User.setUsername(username);
                 User.setBalance(balance);
+
+                //将用户的账号密码存入CheckLogin
+                CheckLogin.getInstance().saveUserInfo(Login.this, username, password);
+
                 //跳转主界面,登录成功
                 //startActivity(intent.setClass(this,MainActivity.class));
                 startActivity(new Intent(this,MainActivity.class));

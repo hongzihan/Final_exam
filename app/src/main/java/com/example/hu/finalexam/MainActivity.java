@@ -1,4 +1,4 @@
-package com.example.hu.dazuoye;
+package com.example.hu.finalexam;
 
 import android.content.Intent;
 import android.database.sqlite.SQLiteDatabase;
@@ -9,10 +9,10 @@ import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.example.hu.dazuoye.db.UserSqliteOpenHelper;
-import com.example.hu.dazuoye.db.dao.UserDao;
-import com.example.hu.dazuoye.domain.User;
-import com.example.hu.dazuoye.ui.TitleActivity;
+import com.example.hu.finalexam.db.UserSqliteOpenHelper;
+import com.example.hu.finalexam.db.dao.UserDao;
+import com.example.hu.finalexam.domain.User;
+import com.example.hu.finalexam.ui.TitleActivity;
 
 public class MainActivity extends TitleActivity {
 

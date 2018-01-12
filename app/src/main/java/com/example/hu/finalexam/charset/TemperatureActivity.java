@@ -1,4 +1,5 @@
-package com.example.hu.dazuoye.charset;
+package com.example.hu.finalexam.charset;
+
 
 import android.graphics.Color;
 import android.os.Bundle;
@@ -8,43 +9,51 @@ import android.view.Menu;
 import android.view.ViewGroup;
 import android.widget.LinearLayout;
 
-import com.example.hu.dazuoye.service.ChartService;
-import com.example.hu.dazuoye.R;
-import com.example.hu.dazuoye.ui.TitleActivity;
+
+import com.example.hu.finalexam.service.ChartService;
+import com.example.hu.finalexam.R;
+import com.example.hu.finalexam.ui.TitleActivity;
 
 import org.achartengine.GraphicalView;
 
 import java.util.Timer;
 import java.util.TimerTask;
 
+
 /**
  * Created by ken on 2018/1/10.
  */
 
-public class PM25Activity extends TitleActivity{
-    private LinearLayout mPM25CurveLayout;
+public class TemperatureActivity extends TitleActivity {
 
-    private GraphicalView mPM25View;
+    private LinearLayout mTemperatureCurveLayout;
 
-    private ChartService mPM25Service;
+    private GraphicalView mTemperatureView;
+
+    private ChartService mTemperatureService;
 
     private Timer timer;
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.pm25);
-        setTitle("PM25曲线图");
+        setContentView(R.layout.temperature);
+        setTitle("Temperature曲线图");
         showBackwardView(R.string.text_back,true);
         showEndView(true);
-        mPM25CurveLayout = (LinearLayout) findViewById(R.id.chart_pm25);
 
-        mPM25Service = new ChartService(this);
-        mPM25Service.setXYMultipleSeriesDataset("PM25曲线");
-        mPM25Service.setXYMultipleSeriesRenderer(100, 5000, "PM25曲线", "时间", "PM2.5",
+
+
+
+        mTemperatureCurveLayout = (LinearLayout) findViewById(R.id.chart_temperature);
+
+        mTemperatureService = new ChartService(this);
+        mTemperatureService.setXYMultipleSeriesDataset("温度曲线");
+        mTemperatureService.setXYMultipleSeriesRenderer(100, 40, "温度曲线", "时间", "温度",
                 Color.RED, Color.RED, Color.RED, Color.BLACK);
-        mPM25View = mPM25Service.getGraphicalView();
+        mTemperatureView = mTemperatureService.getGraphicalView();
 
-        mPM25CurveLayout.addView(mPM25View, new ViewGroup.LayoutParams(
+        mTemperatureCurveLayout.addView(mTemperatureView, new ViewGroup.LayoutParams(
                 ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT));
 
         timer = new Timer();
@@ -68,7 +77,7 @@ public class PM25Activity extends TitleActivity{
         @Override
         //定时更新图表
         public void handleMessage(Message msg) {
-            mPM25Service.updateChart(t, randomDatas(500,5000));
+            mTemperatureService.updateChart(t, randomDatas(10,40));
             t+=5;
         }
     };

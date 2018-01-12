@@ -1,6 +1,4 @@
-package com.example.hu.dazuoye;
-
-import com.example.hu.dazuoye.db.dao.UserDao;
+package com.example.hu.finalexam;
 
 import org.junit.Test;
 

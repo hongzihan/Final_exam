@@ -1,4 +1,4 @@
-package com.example.hu.dazuoye;
+package com.example.hu.finalexam;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -6,8 +6,8 @@ import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 
-import com.example.hu.dazuoye.ui.Login;
-import com.example.hu.dazuoye.ui.Register;
+import com.example.hu.finalexam.ui.Login;
+import com.example.hu.finalexam.ui.Register;
 
 /**
  * Created by a1398 on 2018/1/9.
