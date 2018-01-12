@@ -18,7 +18,7 @@ public class MainActivity extends TitleActivity {
 
     private long exit_time;//用于实现按两次back退出
 
-    UserDao udao = new UserDao(this);
+
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -33,8 +33,8 @@ public class MainActivity extends TitleActivity {
         UserSqliteOpenHelper helper = new UserSqliteOpenHelper(this);//用于第一次数据库的创建
         SQLiteDatabase db = helper.getWritableDatabase();//调用此方法后才会完成创建数据库
 
-        //默认用户
-        udao.insert("admin","12345678901","1234567",0);
+
+
 
         setTitle("交通管理系统");
         showBackwardView(R.string.text_back,false);

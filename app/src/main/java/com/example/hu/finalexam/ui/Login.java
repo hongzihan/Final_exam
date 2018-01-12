@@ -7,6 +7,7 @@ import android.text.TextUtils;
 import android.view.KeyEvent;
 import android.view.View;
 import android.view.Window;
+import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.Toast;
 
@@ -22,10 +23,12 @@ import com.example.hu.finalexam.domain.User;
  */
 
 public class Login extends Dialog {
-    EditText login_account;
-    EditText login_password;
+    private EditText login_account;
+    private EditText login_password;
     private long exit_time;//用于实现按两次back退出
-
+    private CheckBox whether_login;
+    private int checkLoginFlag=-1;
+    private int adminFlag=-1;
 
     public boolean onKeyDown(int keyCode, KeyEvent event) {
         //获取按键并比较两次按back的时间大于2s不退出，否则退出
@@ -51,6 +54,17 @@ public class Login extends Dialog {
 
         login_account = (EditText) findViewById(R.id.login_account);
         login_password = (EditText) findViewById(R.id.login_password);
+        whether_login = (CheckBox) findViewById(R.id.whether_login);
+
+        UserDao udao = new UserDao(this);
+        //默认用户
+        if(adminFlag==-1){
+            udao.insert("admin","12345678901","123456",666);
+            Toast.makeText(this,"默认管理员admin,手机号12345678901密码123456",Toast.LENGTH_LONG).show();
+            adminFlag=0;
+        }else;
+
+
 
     }
 //made by ken ,2018/1/8
@@ -84,9 +98,10 @@ public class Login extends Dialog {
                 User.setUsername(username);
                 User.setBalance(balance);
 
-                //将用户的账号密码存入CheckLogin
-                CheckLogin.getInstance().saveUserInfo(Login.this, username, password);
-
+                //如果选中自动登录，则将用户的账号密码存入CheckLogin
+                if(checkLoginFlag==0){
+                    CheckLogin.getInstance().saveUserInfo(Login.this, username, password);
+                }else;
                 //跳转主界面,登录成功
                 //startActivity(intent.setClass(this,MainActivity.class));
                 startActivity(new Intent(this,MainActivity.class));
@@ -120,5 +135,19 @@ public class Login extends Dialog {
             Toast.makeText(this,"您的密码是" + password,Toast.LENGTH_SHORT).show();
         }
 
+    }
+
+    /**
+     * @param v
+     * made by ken
+     * 2018/1/13
+     * 自动登录checkBox调用的点击方法
+     */
+    public void autologin(View v){
+        if (whether_login.isChecked()){
+            checkLoginFlag=0;
+        }else{
+            checkLoginFlag=-1;
+        }
     }
 }

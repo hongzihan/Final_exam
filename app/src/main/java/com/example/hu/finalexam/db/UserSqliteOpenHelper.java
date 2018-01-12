@@ -4,6 +4,8 @@ import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
+import com.example.hu.finalexam.db.dao.UserDao;
+
 /**
  * Created by ken on 2018/1/6.
  */
@@ -27,6 +29,7 @@ public class UserSqliteOpenHelper extends SQLiteOpenHelper{
         //username 用户名,account 账号,password 密码,balance 余额
         db.execSQL("create table user( _id integer primary key autoincrement, username varchar(30), " +
                 "account varchar(40), password varchar(40), balance integer)");
+
 
     }
 
