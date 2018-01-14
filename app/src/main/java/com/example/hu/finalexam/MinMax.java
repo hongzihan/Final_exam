@@ -44,7 +44,6 @@ public class MinMax extends TitleActivity {
                 User.setMinSpeed(min);
                 String max = editText_Max.getText().toString().trim();
                 User.setMaxSpeed(max);
-                User.setSpeedLimitFlag(0);
                 startActivity(new Intent(this,MainActivity.class));
                 break;
             case R.id.dialog_btn_null:

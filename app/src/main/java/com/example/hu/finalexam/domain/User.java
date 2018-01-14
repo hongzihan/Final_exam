@@ -10,20 +10,12 @@ public class User{
     private static String password;
     private static Integer balance;
     private static Integer id;
-    private static String minSpeed;
-    private static String maxSpeed;
-    private static int speedLimitFlag = -1;
+    private static String minSpeed="0";
+    private static String maxSpeed="120";
 
 
 
-    public static int getSpeedLimitFlag() {
-        return speedLimitFlag;
-    }
 
-
-    public static void setSpeedLimitFlag(int speedLimitFlag) {
-        User.speedLimitFlag = speedLimitFlag;
-    }
 
     public static Integer getMinSpeed() {
         return Integer.parseInt(minSpeed);

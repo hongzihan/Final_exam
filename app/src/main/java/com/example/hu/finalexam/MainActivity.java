@@ -110,11 +110,8 @@ public class MainActivity extends TitleActivity {
         @Override
         public void onTick(long millisUntilFinished) {
             TextView main_carSpeed = (TextView)findViewById(R.id.main_carSpeed);
-            if(User.getSpeedLimitFlag() == -1){
-                main_carSpeed.setText(randomDatas(0,120) + "km/h" + "最高车速为120km/h");
-            }else{
-                main_carSpeed.setText(randomDatas(User.getMinSpeed(),User.getMaxSpeed()) + "km/h" + "最高车速为120km/h");
-            }
+            main_carSpeed.setText(randomDatas(User.getMinSpeed(),User.getMaxSpeed()) + "km/h" + "最高车速为120km/h");
+
 
         }
         @Override
