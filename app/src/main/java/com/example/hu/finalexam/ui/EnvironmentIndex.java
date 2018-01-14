@@ -9,6 +9,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TableLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.hu.finalexam.R;
 import com.example.hu.finalexam.charset.CO2Activity;
@@ -17,6 +18,7 @@ import com.example.hu.finalexam.charset.PM25Activity;
 import com.example.hu.finalexam.charset.RoadwayActivity;
 import com.example.hu.finalexam.charset.SunlightActivity;
 import com.example.hu.finalexam.charset.TemperatureActivity;
+import com.example.hu.finalexam.domain.IndexLimit;
 
 
 /**
@@ -80,20 +82,22 @@ public class EnvironmentIndex extends TitleActivity {
     CountDownTimer cdt = new CountDownTimer(300000, 3000) {
         @Override
         public void onTick(long millisUntilFinished) {
+            int co2,tem,hum,pm,sun,road;
+            int co2Data,temData,humData,pmData,sunData,roadData;
             //设置随机数最大值为标准阈值的1.2倍并取整
-            int tem = (int) Math.ceil(40*1.2);
-            int hum = (int) Math.ceil(150*1.2);
-            int pm = (int) Math.ceil(5000*1.2);
-            int co2 = (int) Math.ceil(600*1.2);
-            int sun = (int) Math.ceil(100*1.2);
-            int road = (int) Math.ceil(5*1.2);
+            tem = (int) Math.ceil(IndexLimit.getMaxTemLimit()*1.2);
+            hum = (int) Math.ceil(IndexLimit.getMaxHumLimit()*1.2);
+            pm = (int) Math.ceil(IndexLimit.getMaxPmLimit()*1.2);
+            co2 = (int) Math.ceil(IndexLimit.getMaxCoLimit()*1.2);
+            sun = (int) Math.ceil(IndexLimit.getMaxSunLimit()*1.2);
+            road = (int) Math.ceil(IndexLimit.getMaxRoadLimit()*1.2);
             //通过随机函数获得数据
-            int temData = randomDatas(10,tem);
-            int humData = randomDatas(50,hum);
-            int pmData = randomDatas(500,pm);
-            int co2Data = randomDatas(100,co2);
-            int sunData = randomDatas(0,sun);
-            int roadData = randomDatas(1,road);
+            temData = randomDatas(IndexLimit.getMinTemLimit(),tem);
+            humData = randomDatas(IndexLimit.getMinHumLimit(),hum);
+            pmData = randomDatas(IndexLimit.getMinPmLimit(),pm);
+            co2Data = randomDatas(IndexLimit.getMinCoLimit(),co2);
+            sunData = randomDatas(IndexLimit.getMinSunLimit(),sun);
+            roadData = randomDatas(IndexLimit.getMinRoadLimit(),road);
 
             //定义控件
             Button temperature = (Button)findViewById(R.id.temperature);
@@ -103,6 +107,7 @@ public class EnvironmentIndex extends TitleActivity {
             Button sunlight = (Button)findViewById(R.id.sunlight);
             Button roadway = (Button)findViewById(R.id.roadway);
 
+
             temperature.setText("温度:"+temData);
             humidity.setText("湿度:"+humData);
             PM25.setText("PM2.5:"+pmData);
@@ -110,47 +115,50 @@ public class EnvironmentIndex extends TitleActivity {
             sunlight.setText("光照:"+sunData);
             roadway.setText("道路状态:"+roadData);
 
-            //若数据中一项超标背景色变为红色，若全未超标则为绿色
-            TableLayout env_layout = (TableLayout)findViewById(R.id.environment_layout);
-            if(temData>40 || humData>150 || pmData>5000 || co2Data>600 || sunData>100 || roadData>5){
-                //设置Table背景色为红色代表警告
-                env_layout.setBackgroundColor(Color.parseColor("#FF0000"));
-            }else{
-                env_layout.setBackgroundColor(Color.parseColor("#7CFC00"));
-            }
+
 
             //通过数据与最大阈值的对比来判断环境指标是否超标若超标则字体变红，若正常则为绿色
-            if(temData>40){
+            if(temData>IndexLimit.getMaxTemLimit()){
                 temperature.setTextColor(Color.parseColor("#FF0000"));
             }else{
                 temperature.setTextColor(Color.parseColor("#7CFC00"));
             }
-            if(humData>150){
+            if(humData>IndexLimit.getMaxHumLimit()){
                 humidity.setTextColor(Color.parseColor("#FF0000"));
             }else{
                 humidity.setTextColor(Color.parseColor("#7CFC00"));
             }
-            if(pmData>5000){
+            if(pmData>IndexLimit.getMaxPmLimit()){
                 PM25.setTextColor(Color.parseColor("#FF0000"));
             }else{
                 PM25.setTextColor(Color.parseColor("#7CFC00"));
             }
-            if(co2Data>600){
+            if(co2Data>IndexLimit.getMaxCoLimit()){
                 CO2.setTextColor(Color.parseColor("#FF0000"));
             }else{
                 CO2.setTextColor(Color.parseColor("#7CFC00"));
             }
-            if(sunData>100){
+            if(sunData>IndexLimit.getMaxSunLimit()){
                 sunlight.setTextColor(Color.parseColor("#FF0000"));
             }else{
                 sunlight.setTextColor(Color.parseColor("#7CFC00"));
             }
-            if(roadData>5){
+            if(roadData>IndexLimit.getMaxRoadLimit()){
                 roadway.setTextColor(Color.parseColor("#FF0000"));
             }else{
                 roadway.setTextColor(Color.parseColor("#7CFC00"));
             }
 
+
+//            //若数据中一项超标背景色变为红色，若全未超标则为绿色
+//            TableLayout env_layout = (TableLayout)findViewById(R.id.environment_layout);
+//
+//            if(temData>40 || humData>150 || pmData>5000 || co2Data>600 || sunData>100 || roadData>5){
+//                //设置Table背景色为红色代表警告
+//                env_layout.setBackgroundColor(Color.parseColor("#FF0000"));
+//            }else{
+//                env_layout.setBackgroundColor(Color.parseColor("#7CFC00"));
+//            }
         }
         @Override
         public void onFinish() {
