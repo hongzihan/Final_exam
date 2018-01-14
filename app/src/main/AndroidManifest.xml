@@ -33,6 +33,7 @@
         <activity android:name="com.example.hu.finalexam.charset.SunlightActivity"/>
         <activity android:name="com.example.hu.finalexam.charset.RoadwayActivity"/>
         <activity android:name="com.example.hu.finalexam.MinMax"/>
+        <activity android:name="com.example.hu.finalexam.ui.EnvironmentMinMax"/>
     </application>
 
 </manifest>

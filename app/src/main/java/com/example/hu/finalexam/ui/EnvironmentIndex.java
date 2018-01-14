@@ -73,7 +73,8 @@ public class EnvironmentIndex extends TitleActivity {
     public void gotoroadway(View view){
         startActivity(new Intent(this,RoadwayActivity.class));
     }
-
+    //跳转环境阈值设置页面
+    public void gotoyuzhi(View view){ startActivity(new Intent(this,EnvironmentMinMax.class));}
 
     //CountDownTimer计时器 通过onCreate()的cdt.start()启动
     CountDownTimer cdt = new CountDownTimer(300000, 3000) {
