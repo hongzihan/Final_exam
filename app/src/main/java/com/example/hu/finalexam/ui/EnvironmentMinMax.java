@@ -33,6 +33,8 @@ public class EnvironmentMinMax extends TitleActivity {
         String max_data = max.getText().toString().trim();
         if(TextUtils.isEmpty(min_data)||TextUtils.isEmpty(max_data)){
             Toast.makeText(this,"请先输入数值",Toast.LENGTH_SHORT).show();
+        }else if(Integer.parseInt(min_data)>Integer.parseInt(max_data)){
+            Toast.makeText(this,"最小值必须比最大值小",Toast.LENGTH_SHORT).show();
         }else{
             IndexLimit.setMinTemLimit(min_data);
             IndexLimit.setMaxTemLimit(max_data);
@@ -46,6 +48,8 @@ public class EnvironmentMinMax extends TitleActivity {
         String max_data = max.getText().toString().trim();
         if(TextUtils.isEmpty(min_data)||TextUtils.isEmpty(max_data)){
             Toast.makeText(this,"请先输入数值",Toast.LENGTH_SHORT).show();
+        }else if(Integer.parseInt(min_data)>Integer.parseInt(max_data)){
+            Toast.makeText(this,"最小值必须比最大值小",Toast.LENGTH_SHORT).show();
         }else{
             IndexLimit.setMinHumLimit(min_data);
             IndexLimit.setMaxHumLimit(max_data);
@@ -59,6 +63,8 @@ public class EnvironmentMinMax extends TitleActivity {
         String max_data = max.getText().toString().trim();
         if(TextUtils.isEmpty(min_data)||TextUtils.isEmpty(max_data)){
             Toast.makeText(this,"请先输入数值",Toast.LENGTH_SHORT).show();
+        }else if(Integer.parseInt(min_data)>Integer.parseInt(max_data)){
+            Toast.makeText(this,"最小值必须比最大值小",Toast.LENGTH_SHORT).show();
         }else{
             IndexLimit.setMinCoLimit(min_data);
             IndexLimit.setMaxCoLimit(max_data);
@@ -72,6 +78,8 @@ public class EnvironmentMinMax extends TitleActivity {
         String max_data = max.getText().toString().trim();
         if(TextUtils.isEmpty(min_data)||TextUtils.isEmpty(max_data)){
             Toast.makeText(this,"请先输入数值",Toast.LENGTH_SHORT).show();
+        }else if(Integer.parseInt(min_data)>Integer.parseInt(max_data)){
+            Toast.makeText(this,"最小值必须比最大值小",Toast.LENGTH_SHORT).show();
         }else{
             IndexLimit.setMinPmLimit(min_data);
             IndexLimit.setMaxPmLimit(max_data);
@@ -85,6 +93,8 @@ public class EnvironmentMinMax extends TitleActivity {
         String max_data = max.getText().toString().trim();
         if(TextUtils.isEmpty(min_data)||TextUtils.isEmpty(max_data)){
             Toast.makeText(this,"请先输入数值",Toast.LENGTH_SHORT).show();
+        }else if(Integer.parseInt(min_data)>Integer.parseInt(max_data)){
+            Toast.makeText(this,"最小值必须比最大值小",Toast.LENGTH_SHORT).show();
         }else{
             IndexLimit.setMinSunLimit(min_data);
             IndexLimit.setMaxSunLimit(max_data);
@@ -98,6 +108,8 @@ public class EnvironmentMinMax extends TitleActivity {
         String max_data = max.getText().toString().trim();
         if(TextUtils.isEmpty(min_data)||TextUtils.isEmpty(max_data)){
             Toast.makeText(this,"请先输入数值",Toast.LENGTH_SHORT).show();
+        }else if(Integer.parseInt(min_data)>Integer.parseInt(max_data)){
+            Toast.makeText(this,"最小值必须比最大值小",Toast.LENGTH_SHORT).show();
         }else{
             IndexLimit.setMinRoadLimit(min_data);
             IndexLimit.setMaxRoadLimit(max_data);
