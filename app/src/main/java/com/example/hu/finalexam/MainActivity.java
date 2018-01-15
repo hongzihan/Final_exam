@@ -4,7 +4,6 @@ import android.content.Intent;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.os.CountDownTimer;
-import android.text.TextUtils;
 import android.view.KeyEvent;
 import android.view.View;
 import android.widget.TextView;
@@ -12,6 +11,7 @@ import android.widget.Toast;
 
 import com.example.hu.finalexam.db.UserSqliteOpenHelper;
 import com.example.hu.finalexam.db.dao.UserDao;
+import com.example.hu.finalexam.domain.SpeedLimit;
 import com.example.hu.finalexam.domain.User;
 import com.example.hu.finalexam.ui.TitleActivity;
 
@@ -60,32 +60,32 @@ public class MainActivity extends TitleActivity {
 
         //ETC余额
         TextView main_balance1 = (TextView)findViewById(R.id.balanceOne);
-        main_balance1.setText(udao.findBalance(User.getAccount()) + "");
+        main_balance1.setText(udao.findBalance("1") + "");
         TextView main_balance2 = (TextView)findViewById(R.id.balanceTwo);
-        main_balance2.setText(udao.findBalance(User.getAccount()) + "");
+        main_balance2.setText(udao.findBalance("2") + "");
         TextView main_balance3 = (TextView)findViewById(R.id.balanceThree);
-        main_balance3.setText(udao.findBalance(User.getAccount()) + "");
+        main_balance3.setText(udao.findBalance("3") + "");
         TextView main_balance4 = (TextView)findViewById(R.id.balanceFour);
-        main_balance4.setText(udao.findBalance(User.getAccount()) + "");
+        main_balance4.setText(udao.findBalance("4") + "");
 
         //最大速度
         TextView maxSpeedOne = (TextView)findViewById(R.id.maxSpeedOne);
-        maxSpeedOne.setText(User.getMaxSpeed() + "");
+        maxSpeedOne.setText(SpeedLimit.getMaxSpeedLimitCarOne() + "");
         TextView maxSpeedTwo = (TextView)findViewById(R.id.maxSpeedTwo);
-        maxSpeedTwo.setText(User.getMaxSpeed() + "");
+        maxSpeedTwo.setText(SpeedLimit.getMaxSpeedLimitCarTwo() + "");
         TextView maxSpeedThree = (TextView)findViewById(R.id.maxSpeedThree);
-        maxSpeedThree.setText(User.getMaxSpeed() + "");
+        maxSpeedThree.setText(SpeedLimit.getMaxSpeedLimitCarThree() + "");
         TextView maxSpeedFour = (TextView)findViewById(R.id.maxSpeedFour);
-        maxSpeedFour.setText(User.getMaxSpeed() + "");
+        maxSpeedFour.setText(SpeedLimit.getMaxSpeedLimitCarFour() + "");
         //最小速度
         TextView minSpeedOne = (TextView)findViewById(R.id.minSpeedOne);
-        minSpeedOne.setText(User.getMinSpeed() + "");
+        minSpeedOne.setText(SpeedLimit.getMinSpeedLimitCarOne() + "");
         TextView minSpeedTwo = (TextView)findViewById(R.id.minSpeedTwo);
-        minSpeedTwo.setText(User.getMinSpeed() + "");
+        minSpeedTwo.setText(SpeedLimit.getMinSpeedLimitCarTwo() + "");
         TextView minSpeedThree = (TextView)findViewById(R.id.minSpeedThree);
-        minSpeedThree.setText(User.getMinSpeed() + "");
+        minSpeedThree.setText(SpeedLimit.getMinSpeedLimitCarThree() + "");
         TextView minSpeedFour = (TextView)findViewById(R.id.minSpeedFour);
-        minSpeedFour.setText(User.getMinSpeed() + "");
+        minSpeedFour.setText(SpeedLimit.getMinSpeedLimitCarFour() + "");
 
 
 
@@ -124,8 +124,8 @@ public class MainActivity extends TitleActivity {
         return super.onKeyDown(keyCode, event);
     }
 
-    public void set_btn(View view){
-        startActivity(new Intent(this,MinMax.class));
+    public void setSpeedLimit(View view){
+        startActivity(new Intent(this,SpeedMinMax.class));
     }
 
 

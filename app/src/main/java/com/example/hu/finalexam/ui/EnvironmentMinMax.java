@@ -22,7 +22,7 @@ public class EnvironmentMinMax extends TitleActivity {
         setContentView(R.layout.environment_minmax);
         setTitle("CO2曲线图");
         showBackwardView(R.string.text_back,true);
-        showEndView(true);
+        showEndView(false);
 
     }
 

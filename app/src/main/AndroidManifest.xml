@@ -32,7 +32,7 @@
         <activity android:name="com.example.hu.finalexam.charset.PM25Activity"/>
         <activity android:name="com.example.hu.finalexam.charset.SunlightActivity"/>
         <activity android:name="com.example.hu.finalexam.charset.RoadwayActivity"/>
-        <activity android:name="com.example.hu.finalexam.MinMax"/>
+        <activity android:name="com.example.hu.finalexam.SpeedMinMax"/>
         <activity android:name="com.example.hu.finalexam.ui.EnvironmentMinMax"/>
     </application>
 
