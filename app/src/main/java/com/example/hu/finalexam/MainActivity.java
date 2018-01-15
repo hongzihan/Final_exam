@@ -46,7 +46,7 @@ public class MainActivity extends TitleActivity {
 
         //设置用户信息
 
-
+        UserDao udao = new UserDao(this);
         //启动定时器
         cdt.start();
         //设置用户数据
@@ -55,7 +55,7 @@ public class MainActivity extends TitleActivity {
         TextView main_account = (TextView)findViewById(R.id.main_account);
         main_account.setText(User.getAccount());
         TextView main_balance = (TextView)findViewById(R.id.main_balance);
-        main_balance.setText(User.getBalance() + "元");
+        main_balance.setText(udao.findBalance(User.getAccount()) + "元");
 
 
 

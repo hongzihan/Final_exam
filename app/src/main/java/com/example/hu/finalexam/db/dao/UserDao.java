@@ -188,5 +188,22 @@ public class UserDao {
         return reaccount;
     }
 
+    public String findAccount(String username, String password){
+
+        //获得一个可读的数据库
+        SQLiteDatabase db = helper.getReadableDatabase();
+
+//        db.execSQL("select * from user where username=?", new Object[]{username});
+
+        Cursor cursor = db.rawQuery("select account from user where username=? and password=?", new String[]{username,password});
+
+        String account = null;
+        if(cursor.moveToNext()){
+            account = cursor.getString(0);
+
+        }
+
+        return account;
+    }
 
 }

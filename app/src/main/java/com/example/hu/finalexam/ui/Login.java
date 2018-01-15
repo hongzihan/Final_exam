@@ -98,9 +98,10 @@ public class Login extends Dialog {
                 User.setUsername(username);
                 User.setBalance(balance);
 
+
                 //如果选中自动登录，则将用户的账号密码存入CheckLogin
                 if(checkLoginFlag==0){
-                    CheckLogin.getInstance().saveUserInfo(Login.this, username, password);
+                    CheckLogin.getInstance().saveUserInfo(Login.this, username, password, udao.findAccount(username,password));
                 }else;
                 //跳转主界面,登录成功
                 //startActivity(intent.setClass(this,MainActivity.class));
