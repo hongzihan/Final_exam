@@ -14,6 +14,7 @@ import com.example.hu.finalexam.db.dao.UserDao;
 import com.example.hu.finalexam.domain.IndexLimit;
 import com.example.hu.finalexam.domain.SpeedLimit;
 import com.example.hu.finalexam.domain.User;
+import com.example.hu.finalexam.ui.Login;
 import com.example.hu.finalexam.ui.TitleActivity;
 
 public class MainActivity extends TitleActivity {
@@ -130,6 +131,9 @@ public class MainActivity extends TitleActivity {
     }
 
 
+    public void changeUser(View view){
+        startActivity(new Intent(this,Login.class));
+    }
 
     //CountDownTimer计时器 通过onCreate()的cdt.start()启动
     CountDownTimer cdt = new CountDownTimer(100000, 1000) {
