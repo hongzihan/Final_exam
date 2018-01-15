@@ -11,6 +11,7 @@ import android.widget.Toast;
 
 import com.example.hu.finalexam.db.UserSqliteOpenHelper;
 import com.example.hu.finalexam.db.dao.UserDao;
+import com.example.hu.finalexam.domain.IndexLimit;
 import com.example.hu.finalexam.domain.SpeedLimit;
 import com.example.hu.finalexam.domain.User;
 import com.example.hu.finalexam.ui.TitleActivity;
@@ -134,16 +135,68 @@ public class MainActivity extends TitleActivity {
     CountDownTimer cdt = new CountDownTimer(100000, 1000) {
         @Override
         public void onTick(long millisUntilFinished) {
+            int car1,car2,car3,car4;
+            int Car1,Car2,Car3,Car4;
+
+            TextView over1 = (TextView)findViewById(R.id.overSpeedOne);
+            TextView over2 = (TextView)findViewById(R.id.overSpeedTwo);
+            TextView over3 = (TextView)findViewById(R.id.overSpeedThree);
+            TextView over4 = (TextView)findViewById(R.id.overSpeedFour);
+            car1 = (int) Math.ceil(SpeedLimit.getMaxSpeedLimitCarOne()*1.2);
+            car2 = (int) Math.ceil(SpeedLimit.getMaxSpeedLimitCarOne()*1.2);
+            car3 = (int) Math.ceil(SpeedLimit.getMaxSpeedLimitCarOne()*1.2);
+            car4 = (int) Math.ceil(SpeedLimit.getMaxSpeedLimitCarOne()*1.2);
+
+            Car1 = (int) Math.ceil(SpeedLimit.getMinSpeedLimitCarOne()*0.8);
+            Car2 = (int) Math.ceil(SpeedLimit.getMinSpeedLimitCarOne()*0.8);
+            Car3 = (int) Math.ceil(SpeedLimit.getMinSpeedLimitCarOne()*0.8);
+            Car4 = (int) Math.ceil(SpeedLimit.getMinSpeedLimitCarOne()*0.8);
+
+            int speedcar1 = randomDatas(Car1,car1);
+            int speedcar2 = randomDatas(Car2,car2);
+            int speedcar3 = randomDatas(Car3,car3);
+            int speedcar4 = randomDatas(Car4,car4);
+
             TextView main_carSpeed1 = (TextView)findViewById(R.id.speedOne);
-            main_carSpeed1.setText(randomDatas(User.getMinSpeed(),User.getMaxSpeed()) + "");
+            main_carSpeed1.setText( speedcar1 + "");
             TextView main_carSpeed2 = (TextView)findViewById(R.id.speedTwo);
-            main_carSpeed2.setText(randomDatas(User.getMinSpeed(),User.getMaxSpeed()) + "");
+            main_carSpeed2.setText( speedcar2 + "");
             TextView main_carSpeed3 = (TextView)findViewById(R.id.speedThree);
-            main_carSpeed3.setText(randomDatas(User.getMinSpeed(),User.getMaxSpeed()) + "");
+            main_carSpeed3.setText( speedcar3 + "");
             TextView main_carSpeed4 = (TextView)findViewById(R.id.speedFour);
-            main_carSpeed4.setText(randomDatas(User.getMinSpeed(),User.getMaxSpeed()) + "");
+            main_carSpeed4.setText( speedcar4 + "");
 
+            if(speedcar1>SpeedLimit.getMaxSpeedLimitCarOne()){
+                over1.setText("是");
+            }else if(speedcar1<SpeedLimit.getMinSpeedLimitCarOne()){
+                main_carSpeed1.setText( "!stop");
+            }else{
+                over1.setText("否");
+            }
 
+            if(speedcar2>SpeedLimit.getMaxSpeedLimitCarTwo()){
+                over2.setText("是");
+            }else if(speedcar2<SpeedLimit.getMinSpeedLimitCarTwo()){
+                main_carSpeed2.setText( "!stop");
+            }else{
+                over2.setText("否");
+            }
+
+            if(speedcar3>SpeedLimit.getMaxSpeedLimitCarThree()){
+                over3.setText("是");
+            }else if(speedcar3<SpeedLimit.getMinSpeedLimitCarThree()){
+                main_carSpeed3.setText( "!stop");
+            }else{
+                over3.setText("否");
+            }
+
+            if(speedcar4>SpeedLimit.getMaxSpeedLimitCarFour()){
+                over4.setText("是");
+            }else if(speedcar4<SpeedLimit.getMinSpeedLimitCarFour()){
+                main_carSpeed4.setText( "!stop");
+            }else{
+                over4.setText("否");
+            }
         }
         @Override
         public void onFinish() {

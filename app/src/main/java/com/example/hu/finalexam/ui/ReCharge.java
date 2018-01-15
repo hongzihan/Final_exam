@@ -39,7 +39,7 @@ public class ReCharge extends TitleActivity {
         //CharSequence title = null;
         //title = getTitle_1();
         //showBackwardView(title,true);
-        setTitle("用户充值");
+        setTitle("小车充值");
 
         setBottomImg("right");
 

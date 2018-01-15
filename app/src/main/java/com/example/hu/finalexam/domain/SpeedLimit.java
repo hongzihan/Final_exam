@@ -7,74 +7,74 @@ package com.example.hu.finalexam.domain;
 public class SpeedLimit {
 
 
-    private static String minSpeedLimitCarOne = "0";
+    private static String minSpeedLimitCarOne = "60";
     private static String maxSpeedLimitCarOne = "120";
-    private static String minSpeedLimitCarTwo = "0";
+    private static String minSpeedLimitCarTwo = "60";
     private static String maxSpeedLimitCarTwo = "120";
-    private static String minSpeedLimitCarThree = "0";
+    private static String minSpeedLimitCarThree = "60";
     private static String maxSpeedLimitCarThree = "120";
-    private static String minSpeedLimitCarFour = "0";
+    private static String minSpeedLimitCarFour = "60";
     private static String maxSpeedLimitCarFour = "120";
 
 
-    public static String getMinSpeedLimitCarOne() {
-        return minSpeedLimitCarOne;
+    public static int getMinSpeedLimitCarOne() {
+        return Integer.parseInt(minSpeedLimitCarOne);
     }
 
     public static void setMinSpeedLimitCarOne(String minSpeedLimitCarOne) {
         SpeedLimit.minSpeedLimitCarOne = minSpeedLimitCarOne;
     }
 
-    public static String getMaxSpeedLimitCarOne() {
-        return maxSpeedLimitCarOne;
+    public static int getMaxSpeedLimitCarOne() {
+        return Integer.parseInt(maxSpeedLimitCarOne);
     }
 
     public static void setMaxSpeedLimitCarOne(String maxSpeedLimitCarOne) {
         SpeedLimit.maxSpeedLimitCarOne = maxSpeedLimitCarOne;
     }
 
-    public static String getMinSpeedLimitCarTwo() {
-        return minSpeedLimitCarTwo;
+    public static int getMinSpeedLimitCarTwo() {
+        return Integer.parseInt(minSpeedLimitCarTwo);
     }
 
     public static void setMinSpeedLimitCarTwo(String minSpeedLimitCarTwo) {
         SpeedLimit.minSpeedLimitCarTwo = minSpeedLimitCarTwo;
     }
 
-    public static String getMaxSpeedLimitCarTwo() {
-        return maxSpeedLimitCarTwo;
+    public static int getMaxSpeedLimitCarTwo() {
+        return Integer.parseInt(maxSpeedLimitCarTwo);
     }
 
     public static void setMaxSpeedLimitCarTwo(String maxSpeedLimitCarTwo) {
         SpeedLimit.maxSpeedLimitCarTwo = maxSpeedLimitCarTwo;
     }
 
-    public static String getMinSpeedLimitCarThree() {
-        return minSpeedLimitCarThree;
+    public static int getMinSpeedLimitCarThree() {
+        return Integer.parseInt(minSpeedLimitCarThree);
     }
 
     public static void setMinSpeedLimitCarThree(String minSpeedLimitCarThree) {
         SpeedLimit.minSpeedLimitCarThree = minSpeedLimitCarThree;
     }
 
-    public static String getMaxSpeedLimitCarThree() {
-        return maxSpeedLimitCarThree;
+    public static int getMaxSpeedLimitCarThree() {
+        return Integer.parseInt(maxSpeedLimitCarThree);
     }
 
     public static void setMaxSpeedLimitCarThree(String maxSpeedLimitCarThree) {
         SpeedLimit.maxSpeedLimitCarThree = maxSpeedLimitCarThree;
     }
 
-    public static String getMinSpeedLimitCarFour() {
-        return minSpeedLimitCarFour;
+    public static int getMinSpeedLimitCarFour() {
+        return Integer.parseInt(minSpeedLimitCarFour);
     }
 
     public static void setMinSpeedLimitCarFour(String minSpeedLimitCarFour) {
         SpeedLimit.minSpeedLimitCarFour = minSpeedLimitCarFour;
     }
 
-    public static String getMaxSpeedLimitCarFour() {
-        return maxSpeedLimitCarFour;
+    public static int getMaxSpeedLimitCarFour() {
+        return Integer.parseInt(maxSpeedLimitCarFour);
     }
 
     public static void setMaxSpeedLimitCarFour(String maxSpeedLimitCarFour) {
