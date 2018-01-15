@@ -18,15 +18,14 @@
             android:layout_marginStart="8dp"
             android:layout_marginTop="8dp"
             android:background="@null"
-            android:cursorVisible="false"
             android:inputType="textNoSuggestions"
             android:text=""
-            android:hint="请输入充值手机号"
+            android:hint="请输入小车代号"
             android:textSize="32sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            android:onClick="pay_Ed"/>
+           />
         <!--cursorVisible     去除光标-->
         <!--android:inputType="textNoSuggestions"     去除输入字符时下划线-->
         <TextView

@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.os.CountDownTimer;
+import android.text.TextUtils;
 import android.view.KeyEvent;
 import android.view.View;
 import android.widget.TextView;
@@ -54,13 +55,37 @@ public class MainActivity extends TitleActivity {
         main_username.setText(User.getUsername());
         TextView main_account = (TextView)findViewById(R.id.main_account);
         main_account.setText(User.getAccount());
-        TextView main_balance = (TextView)findViewById(R.id.main_balance);
-        main_balance.setText(udao.findBalance(User.getAccount()) + "元");
 
 
 
+        //ETC余额
+        TextView main_balance1 = (TextView)findViewById(R.id.balanceOne);
+        main_balance1.setText(udao.findBalance(User.getAccount()) + "");
+        TextView main_balance2 = (TextView)findViewById(R.id.balanceTwo);
+        main_balance2.setText(udao.findBalance(User.getAccount()) + "");
+        TextView main_balance3 = (TextView)findViewById(R.id.balanceThree);
+        main_balance3.setText(udao.findBalance(User.getAccount()) + "");
+        TextView main_balance4 = (TextView)findViewById(R.id.balanceFour);
+        main_balance4.setText(udao.findBalance(User.getAccount()) + "");
 
-
+        //最大速度
+        TextView maxSpeedOne = (TextView)findViewById(R.id.maxSpeedOne);
+        maxSpeedOne.setText(User.getMaxSpeed() + "");
+        TextView maxSpeedTwo = (TextView)findViewById(R.id.maxSpeedTwo);
+        maxSpeedTwo.setText(User.getMaxSpeed() + "");
+        TextView maxSpeedThree = (TextView)findViewById(R.id.maxSpeedThree);
+        maxSpeedThree.setText(User.getMaxSpeed() + "");
+        TextView maxSpeedFour = (TextView)findViewById(R.id.maxSpeedFour);
+        maxSpeedFour.setText(User.getMaxSpeed() + "");
+        //最小速度
+        TextView minSpeedOne = (TextView)findViewById(R.id.minSpeedOne);
+        minSpeedOne.setText(User.getMinSpeed() + "");
+        TextView minSpeedTwo = (TextView)findViewById(R.id.minSpeedTwo);
+        minSpeedTwo.setText(User.getMinSpeed() + "");
+        TextView minSpeedThree = (TextView)findViewById(R.id.minSpeedThree);
+        minSpeedThree.setText(User.getMinSpeed() + "");
+        TextView minSpeedFour = (TextView)findViewById(R.id.minSpeedFour);
+        minSpeedFour.setText(User.getMinSpeed() + "");
 
 
 
@@ -109,8 +134,14 @@ public class MainActivity extends TitleActivity {
     CountDownTimer cdt = new CountDownTimer(100000, 1000) {
         @Override
         public void onTick(long millisUntilFinished) {
-            TextView main_carSpeed = (TextView)findViewById(R.id.main_carSpeed);
-            main_carSpeed.setText(randomDatas(User.getMinSpeed(),User.getMaxSpeed()) + "km/h" + "最高车速为120km/h");
+            TextView main_carSpeed1 = (TextView)findViewById(R.id.speedOne);
+            main_carSpeed1.setText(randomDatas(User.getMinSpeed(),User.getMaxSpeed()) + "");
+            TextView main_carSpeed2 = (TextView)findViewById(R.id.speedTwo);
+            main_carSpeed2.setText(randomDatas(User.getMinSpeed(),User.getMaxSpeed()) + "");
+            TextView main_carSpeed3 = (TextView)findViewById(R.id.speedThree);
+            main_carSpeed3.setText(randomDatas(User.getMinSpeed(),User.getMaxSpeed()) + "");
+            TextView main_carSpeed4 = (TextView)findViewById(R.id.speedFour);
+            main_carSpeed4.setText(randomDatas(User.getMinSpeed(),User.getMaxSpeed()) + "");
 
 
         }

@@ -15,6 +15,7 @@ import com.example.hu.finalexam.Dialog;
 import com.example.hu.finalexam.MainActivity;
 import com.example.hu.finalexam.R;
 import com.example.hu.finalexam.db.dao.UserDao;
+import com.example.hu.finalexam.domain.AutoLogin;
 import com.example.hu.finalexam.domain.CheckLogin;
 import com.example.hu.finalexam.domain.User;
 
@@ -28,7 +29,6 @@ public class Login extends Dialog {
     private long exit_time;//用于实现按两次back退出
     private CheckBox whether_login;
     private int checkLoginFlag=-1;
-    private int adminFlag=-1;
 
     public boolean onKeyDown(int keyCode, KeyEvent event) {
         //获取按键并比较两次按back的时间大于2s不退出，否则退出
@@ -58,11 +58,17 @@ public class Login extends Dialog {
 
         UserDao udao = new UserDao(this);
         //默认用户
-        if(adminFlag==-1){
-            udao.insert("admin","12345678901","123456",666);
+        if(AutoLogin.getInstance().hasAutoLoginInfo(Login.this)){
+
+        }else{
+            udao.insert("admin","12345678901","123456",100);
+            udao.insert("carOne","1","123456",100);
+            udao.insert("carTwo","2","123456",100);
+            udao.insert("carThree","3","123456",100);
+            udao.insert("carFour","4","123456",100);
             Toast.makeText(this,"默认管理员admin,手机号12345678901密码123456",Toast.LENGTH_LONG).show();
-            adminFlag=0;
-        }else;
+            AutoLogin.getInstance().saveAutoLoginInfo(Login.this, 0);
+        }
 
 
 
@@ -126,12 +132,11 @@ public class Login extends Dialog {
         String account = login_account.getText().toString().trim();
         UserDao udao = new UserDao(this);
         String password = udao.findPassword(account);
-        Integer check = udao.recheckAccount(account);
 
         if(TextUtils.isEmpty(account)){
             Toast.makeText(this,"请输入账号",Toast.LENGTH_SHORT).show();
-        }else if(check.equals(-1)){
-            Toast.makeText(this,"该账号未注册，请检查账号是否输入正确",Toast.LENGTH_SHORT).show();
+        }else if(udao.reCheckAccount(account)){
+            Toast.makeText(this,"该账号未注册，请检查账号是否输入正确",Toast.LENGTH_LONG).show();
         }else{
             Toast.makeText(this,"您的密码是" + password,Toast.LENGTH_SHORT).show();
         }

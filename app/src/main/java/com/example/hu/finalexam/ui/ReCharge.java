@@ -10,7 +10,6 @@ import android.widget.Toast;
 
 import com.example.hu.finalexam.R;
 import com.example.hu.finalexam.db.dao.UserDao;
-import com.example.hu.finalexam.domain.User;
 
 /**
  * Created by a1398 on 2018/1/6.
@@ -34,7 +33,7 @@ public class ReCharge extends TitleActivity {
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.recharge);
-        mEditText = (EditText) findViewById(R.id.recharge_account);
+        recharge_account = (EditText) findViewById(R.id.recharge_account);
         mPayForTv = (TextView) findViewById(R.id.pay_For_Tv);
         flag = true;
         //CharSequence title = null;
@@ -43,7 +42,6 @@ public class ReCharge extends TitleActivity {
         setTitle("用户充值");
 
         setBottomImg("right");
-        recharge_account = findViewById(R.id.recharge_account);
 
 //        pay_btn_10 = (Button) findViewById(R.id.pay_btn_10);
 //        pay_btn_20 = (Button) findViewById(R.id.pay_btn_20);
@@ -56,16 +54,7 @@ public class ReCharge extends TitleActivity {
 //        pay_btn_1000 = (Button) findViewById(R.id.pay_btn_500);
     }
 
-    public void pay_Ed(View view) {
-        if(flag) {
-            mEditText.setText("");
-            mEditText.setHint("请输入充值手机号");
-            mPayForTv.setText("");
-            flag = false;
-        }
-        else ;
 
-    }
 
     /**
      * made by ken
@@ -75,7 +64,6 @@ public class ReCharge extends TitleActivity {
     public void reCharge(View view){
         String account = recharge_account.getText().toString().trim();
         UserDao udao = new UserDao(this);
-        Integer balance = udao.findBalance(account);
         Integer canRecharge;
         switch (view.getId()) {
             case R.id.pay_btn_10:
@@ -85,10 +73,10 @@ public class ReCharge extends TitleActivity {
                 }else if(udao.findBalance(account)+10 > 5000){
                     canRecharge = 5000 - udao.findBalance(account);
                     Toast.makeText(this, "余额上限为5000，您当前还可充值" + canRecharge + "元", Toast.LENGTH_SHORT).show();
-                }
-                else{
+                }else if(udao.reCheckAccount(account)){
+                    Toast.makeText(this,"该账户不存在",Toast.LENGTH_SHORT).show();
+                }else{
                     udao.reCharge(account, pay_btn_10);
-                    User.setBalance(balance);
                     Toast.makeText(this, "成功充值10元", Toast.LENGTH_SHORT).show();
                 }
                 break;
@@ -99,9 +87,10 @@ public class ReCharge extends TitleActivity {
                 }else if(udao.findBalance(account)+20 > 5000){
                     canRecharge = 5000 - udao.findBalance(account);
                     Toast.makeText(this, "余额上限为5000，您当前还可充值" + canRecharge + "元", Toast.LENGTH_SHORT).show();
+                }else if(udao.reCheckAccount(account)){
+                    Toast.makeText(this,"该账户不存在",Toast.LENGTH_SHORT).show();
                 }else{
                     udao.reCharge(account, pay_btn_20);
-                    User.setBalance(balance);
                     Toast.makeText(this, "成功充值20元", Toast.LENGTH_SHORT).show();
                 }
 
@@ -113,9 +102,10 @@ public class ReCharge extends TitleActivity {
                 }else if(udao.findBalance(account)+30 > 5000){
                     canRecharge = 5000 - udao.findBalance(account);
                     Toast.makeText(this, "余额上限为5000，您当前还可充值" + canRecharge + "元", Toast.LENGTH_SHORT).show();
+                }else if(udao.reCheckAccount(account)){
+                    Toast.makeText(this,"该账户不存在",Toast.LENGTH_SHORT).show();
                 }else{
                     udao.reCharge(account, pay_btn_30);
-                    User.setBalance(balance);
                     Toast.makeText(this, "成功充值30元", Toast.LENGTH_SHORT).show();
                 }
 
@@ -127,9 +117,10 @@ public class ReCharge extends TitleActivity {
                 }else if(udao.findBalance(account)+50 > 5000){
                     canRecharge = 5000 - udao.findBalance(account);
                     Toast.makeText(this, "余额上限为5000，您当前还可充值" + canRecharge + "元", Toast.LENGTH_SHORT).show();
+                }else if(udao.reCheckAccount(account)){
+                    Toast.makeText(this,"该账户不存在",Toast.LENGTH_SHORT).show();
                 }else{
                     udao.reCharge(account, pay_btn_50);
-                    User.setBalance(balance);
                     Toast.makeText(this, "成功充值50元", Toast.LENGTH_SHORT).show();
                 }
 
@@ -141,9 +132,10 @@ public class ReCharge extends TitleActivity {
                 }else if(udao.findBalance(account)+100 > 5000) {
                     canRecharge = 5000 - udao.findBalance(account);
                     Toast.makeText(this, "余额上限为5000，您当前还可充值" + canRecharge + "元", Toast.LENGTH_SHORT).show();
+                }else if(udao.reCheckAccount(account)){
+                    Toast.makeText(this,"该账户不存在",Toast.LENGTH_SHORT).show();
                 }else{
                     udao.reCharge(account, pay_btn_100);
-                    User.setBalance(balance);
                     Toast.makeText(this, "成功充值100元", Toast.LENGTH_SHORT).show();
                 }
 
@@ -155,9 +147,10 @@ public class ReCharge extends TitleActivity {
                 }else if(udao.findBalance(account)+200 > 5000){
                     canRecharge = 5000 - udao.findBalance(account);
                     Toast.makeText(this, "余额上限为5000，您当前还可充值" + canRecharge + "元", Toast.LENGTH_SHORT).show();
+                }else if(udao.reCheckAccount(account)){
+                    Toast.makeText(this,"该账户不存在",Toast.LENGTH_SHORT).show();
                 }else{
                     udao.reCharge(account, pay_btn_200);
-                    User.setBalance(balance);
                     Toast.makeText(this, "成功充值200元", Toast.LENGTH_SHORT).show();
                 }
 
@@ -169,9 +162,10 @@ public class ReCharge extends TitleActivity {
                 }else if(udao.findBalance(account)+300 > 5000){
                     canRecharge = 5000 - udao.findBalance(account);
                     Toast.makeText(this, "余额上限为5000，您当前还可充值" + canRecharge + "元", Toast.LENGTH_SHORT).show();
+                }else if(udao.reCheckAccount(account)){
+                    Toast.makeText(this,"该账户不存在",Toast.LENGTH_SHORT).show();
                 }else{
                     udao.reCharge(account, pay_btn_300);
-                    User.setBalance(balance);
                     Toast.makeText(this, "成功充值300元", Toast.LENGTH_SHORT).show();
                 }
 
@@ -183,9 +177,10 @@ public class ReCharge extends TitleActivity {
                 }else if(udao.findBalance(account)+500 > 5000){
                     canRecharge = 5000 - udao.findBalance(account);
                     Toast.makeText(this, "余额上限为5000，您当前还可充值" + canRecharge + "元", Toast.LENGTH_SHORT).show();
+                }else if(udao.reCheckAccount(account)){
+                    Toast.makeText(this,"该账户不存在",Toast.LENGTH_SHORT).show();
                 }else{
                     udao.reCharge(account, pay_btn_500);
-                    User.setBalance(balance);
                     Toast.makeText(this, "成功充值500元", Toast.LENGTH_SHORT).show();
                 }
 
@@ -197,9 +192,10 @@ public class ReCharge extends TitleActivity {
                 }else if(udao.findBalance(account)+1000 > 5000){
                     canRecharge = 5000 - udao.findBalance(account);
                     Toast.makeText(this, "余额上限为5000，您当前还可充值" + canRecharge + "元", Toast.LENGTH_SHORT).show();
+                }else if(udao.reCheckAccount(account)){
+                    Toast.makeText(this,"该账户不存在",Toast.LENGTH_SHORT).show();
                 }else{
                     udao.reCharge(account, pay_btn_1000);
-                    User.setBalance(balance);
                     Toast.makeText(this, "成功充值1000元", Toast.LENGTH_SHORT).show();
                 }
 

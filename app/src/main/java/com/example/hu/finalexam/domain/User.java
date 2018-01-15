@@ -12,10 +12,15 @@ public class User{
     private static Integer id;
     private static String minSpeed="0";
     private static String maxSpeed="120";
+    private static int autoLogin=-1;
 
+    public static int getAutoLogin() {
+        return autoLogin;
+    }
 
-
-
+    public static void setAutoLogin(int autoLogin) {
+        User.autoLogin = autoLogin;
+    }
 
     public static Integer getMinSpeed() {
         return Integer.parseInt(minSpeed);

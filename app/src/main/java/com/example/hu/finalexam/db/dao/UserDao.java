@@ -140,7 +140,7 @@ public class UserDao {
 
         Cursor cursor = db.rawQuery("select balance from user where account=?", new String[]{account});
 
-        Integer balance = null;
+        Integer balance = 0;
         if(cursor.moveToNext()){
             balance = cursor.getInt(0);
         }
@@ -168,7 +168,7 @@ public class UserDao {
 
 
 
-    public Integer recheckAccount(String account){
+    public boolean reCheckAccount(String account){
 
         //获得一个可读的数据库
         SQLiteDatabase db = helper.getReadableDatabase();
@@ -177,15 +177,12 @@ public class UserDao {
 
         Cursor cursor = db.rawQuery("select account from user where account=?", new String[]{account});
 
-        Integer reaccount = -1;
+        boolean flag = true;
         if(cursor.moveToNext()){
-            reaccount = cursor.getInt(0);
-            if(reaccount > 0){
-                reaccount = 0;
-            }
+            flag = false;
         }
 
-        return reaccount;
+        return flag;
     }
 
     public String findAccount(String username, String password){

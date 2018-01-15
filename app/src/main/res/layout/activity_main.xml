@@ -11,53 +11,31 @@
         android:layout_height="match_parent">
 
 
+
+
+
+
         <TableLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginEnd="8dp"
             android:layout_marginStart="8dp"
             android:background="@color/white"
-            android:stretchColumns="2"
-            android:shrinkColumns="0"
+            android:stretchColumns="1,2,3,4"
+            android:shrinkColumns="1,2,3,4"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent">
+
             <TableRow>
                 <TextView
-                    android:layout_span="3"
+                    android:layout_span="5"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="欢迎使用智能交通系统"
-                    android:textSize="26sp"/>
+                    android:textSize="23sp"/>
             </TableRow>
-            <!--<TableRow>-->
-                <!--<TextView-->
-                    <!--android:layout_span="3"-->
-                    <!--android:layout_width="match_parent"-->
-                    <!--android:layout_height="wrap_content"-->
-                    <!--android:text=" "-->
-                    <!--android:textSize="26sp"/>-->
-            <!--</TableRow>-->
-
-            <!--<TableRow>-->
-                <!--<TextView-->
-                    <!--android:layout_span="3"-->
-                    <!--android:layout_width="match_parent"-->
-                    <!--android:layout_height="wrap_content"-->
-                    <!--android:text=" "-->
-                    <!--android:textSize="26sp"/>-->
-            <!--</TableRow>-->
-            <!--<TableRow>-->
-                <!--<TextView-->
-                    <!--android:layout_span="3"-->
-                    <!--android:layout_width="match_parent"-->
-                    <!--android:layout_height="wrap_content"-->
-                    <!--android:text=" "-->
-                    <!--android:textSize="26sp"/>-->
-            <!--</TableRow>-->
-
-
 
             <TableRow>
 
@@ -108,196 +86,270 @@
                     android:textColor="#000"
                     android:paddingLeft="5dp"/>
             </TableRow>
-            <TableRow>
 
-                <TextView
 
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:paddingLeft="5dp"
-                    android:text="账户余额:"
-                    android:textColor="#000"
-                    android:textSize="15dp"
-                    android:textStyle="bold"
-                    android:textAlignment="viewEnd"/>
-                <TextView
-                    android:id="@+id/main_balance"
-                    android:layout_weight="1"
-                    android:layout_span="3"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="未知"
-                    android:textSize="15dp"
-                    android:textColor="#000"
-                    android:paddingLeft="5dp"/>
-            </TableRow>
 
             <TableRow>
 
-                <TextView
-
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:paddingLeft="5dp"
-                    android:text="car1车速:"
-                    android:textColor="#000"
-                    android:textSize="20dp"
-                    android:textStyle="bold"
-                    android:textAlignment="viewEnd" />
-                <TextView
-                    android:id="@+id/main_carSpeed"
-                    android:layout_weight="1"
-                    android:layout_span="3"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="未知"
-                    android:textSize="18dp"
-                    android:textColor="#000"
-                    android:paddingLeft="5dp"/>
                 <Button
                     android:background="#ffffffff"
-                    android:text="设置"
-                    android:onClick="set_btn"
+                    android:text="属性/小车"
                     android:layout_width="60dp"
                     android:layout_height="wrap_content"/>
+
+                <Button
+                    android:id="@+id/car_one"
+                    android:layout_width="57.5dp"
+                    android:layout_height="wrap_content"
+                    android:background="#ffffffff"
+                    android:onClick="set_oneCar"
+                    android:text="一" />
+
+                <Button
+                    android:id="@+id/car_two"
+                    android:layout_width="57.5dp"
+                    android:layout_height="wrap_content"
+                    android:background="#ffffffff"
+                    android:onClick="set_twoCar"
+                    android:text="二" />
+
+                <Button
+                    android:id="@+id/car_three"
+                    android:layout_width="57.5dp"
+                    android:layout_height="wrap_content"
+                    android:background="#ffffffff"
+                    android:onClick="set_threeCar"
+                    android:text="三" />
+
+                <Button
+                    android:id="@+id/car_four"
+                    android:layout_width="57.5dp"
+                    android:layout_height="wrap_content"
+                    android:background="#ffffffff"
+                    android:onClick="set_fourCar"
+                    android:text="四" />
+
             </TableRow>
             <TableRow>
 
-                <TextView
 
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:paddingLeft="5dp"
-                    android:text="car2车速:"
-                    android:textColor="#000"
-                    android:textSize="20dp"
-                    android:textStyle="bold"
-                    android:textAlignment="viewEnd" />
-                <TextView
-                    android:id="@+id/main_car2Speed"
-                    android:layout_weight="1"
-                    android:layout_span="3"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="未知"
-                    android:textSize="18dp"
-                    android:textColor="#000"
-                    android:paddingLeft="5dp"/>
+
+
                 <Button
                     android:background="#ffffffff"
-                    android:text="设置"
-                    android:onClick="set_btn"
+                    android:text="车速/km/h"
                     android:layout_width="60dp"
                     android:layout_height="wrap_content"/>
-            </TableRow>
-            <TableRow>
 
                 <TextView
-
+                    android:id="@+id/speedOne"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:paddingLeft="5dp"
-                    android:text="car3车速:"
-                    android:textColor="#000"
-                    android:textSize="20dp"
-                    android:textStyle="bold"
-                    android:textAlignment="viewEnd" />
-                <TextView
-                    android:id="@+id/main_car3Speed"
-                    android:layout_weight="1"
-                    android:layout_span="3"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
                     android:text="未知"
-                    android:textSize="18dp"
-                    android:textColor="#000"
-                    android:paddingLeft="5dp"/>
-                <Button
-                    android:background="#ffffffff"
-                    android:text="设置"
-                    android:onClick="set_btn"
-                    android:layout_width="60dp"
-                    android:layout_height="wrap_content"/>
-            </TableRow>
-            <TableRow>
-
-                <TextView
-
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:paddingLeft="5dp"
-                    android:text="car4车速:"
-                    android:textColor="#000"
-                    android:textSize="20dp"
-                    android:textStyle="bold"
-                    android:textAlignment="viewEnd" />
-                <TextView
-                    android:id="@+id/main_car4Speed"
-                    android:layout_weight="1"
-                    android:layout_span="3"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="未知"
-                    android:textSize="18dp"
-                    android:textColor="#000"
-                    android:paddingLeft="5dp"/>
-                <Button
-                    android:background="#ffffffff"
-                    android:text="设置"
-                    android:onClick="set_btn"
-                    android:layout_width="60dp"
-                    android:layout_height="wrap_content"/>
-            </TableRow>
-            <TableRow>
-
-                <TextView
-
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:paddingLeft="5dp"
-                    android:text="最大速度:"
-                    android:textColor="#000"
-                    android:textSize="15dp"
-                    android:textStyle="bold"
-                    android:textAlignment="viewEnd" />
-                <TextView
-                    android:id="@+id/main_maxLimit"
-                    android:layout_weight="1"
-                    android:layout_span="1"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="未知"
-                    android:textSize="13dp"
-                    android:textColor="#000"
-                    android:paddingLeft="5dp"/>
-
-                <TextView
-
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:paddingLeft="5dp"
-                    android:text="最小速度:"
                     android:textAlignment="viewEnd"
                     android:textColor="#000"
-                    android:textSize="15dp"
+                    android:textSize="20dp"
                     android:textStyle="bold" />
+
                 <TextView
-                    android:id="@+id/main_smallLimit"
-                    android:layout_weight="1"
-                    android:layout_span="1"
+                    android:id="@+id/speedTwo"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:paddingLeft="5dp"
                     android:text="未知"
-                    android:textSize="13dp"
+                    android:textAlignment="viewEnd"
                     android:textColor="#000"
-                    android:paddingLeft="5dp"/>
+                    android:textSize="20dp"
+                    android:textStyle="bold" />
+                <TextView
+                    android:id="@+id/speedThree"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:paddingLeft="5dp"
+                    android:text="未知"
+                    android:textColor="#000"
+                    android:textSize="20dp"
+                    android:textStyle="bold"
+                    android:textAlignment="viewEnd" />
+                <TextView
+                    android:id="@+id/speedFour"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:paddingLeft="5dp"
+                    android:text="未知"
+                    android:textColor="#000"
+                    android:textSize="20dp"
+                    android:textStyle="bold"
+                    android:textAlignment="viewEnd" />
+
+            </TableRow>
+            <TableRow>
+
+
+                <Button
+                    android:background="#ffffffff"
+                    android:text="ETC余额/元"
+                    android:layout_width="60dp"
+                    android:layout_height="wrap_content"/>
+
+                <TextView
+                    android:id="@+id/balanceOne"
+                    android:layout_width="61dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:paddingLeft="5dp"
+                    android:text="未知"
+                    android:textAlignment="viewEnd"
+                    android:textColor="#000"
+                    android:textSize="20dp"
+                    android:textStyle="bold" />
+                <TextView
+                    android:id="@+id/balanceTwo"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:paddingLeft="5dp"
+                    android:text="未知"
+                    android:textColor="#000"
+                    android:textSize="20dp"
+                    android:textStyle="bold"
+                    android:textAlignment="viewEnd" />
+                <TextView
+                    android:id="@+id/balanceThree"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:paddingLeft="5dp"
+                    android:text="未知"
+                    android:textColor="#000"
+                    android:textSize="20dp"
+                    android:textStyle="bold"
+                    android:textAlignment="viewEnd" />
+                <TextView
+                    android:id="@+id/balanceFour"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:paddingLeft="5dp"
+                    android:text="未知"
+                    android:textColor="#000"
+                    android:textSize="20dp"
+                    android:textStyle="bold"
+                    android:textAlignment="viewEnd" />
+            </TableRow>
+            <TableRow>
+
+                <Button
+                    android:background="#ffffffff"
+                    android:text="最大速度/km/h"
+                    android:layout_width="60dp"
+                    android:layout_height="wrap_content"/>
+                <TextView
+                    android:id="@+id/maxSpeedOne"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:paddingLeft="5dp"
+                    android:text="未知"
+                    android:textColor="#000"
+                    android:textSize="20dp"
+                    android:textStyle="bold"
+                    android:textAlignment="viewEnd" />
+
+                <TextView
+                    android:id="@+id/maxSpeedTwo"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:paddingLeft="5dp"
+                    android:text="未知"
+                    android:textColor="#000"
+                    android:textSize="20dp"
+                    android:textStyle="bold"
+                    android:textAlignment="viewEnd" />
+                <TextView
+                    android:id="@+id/maxSpeedThree"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:paddingLeft="5dp"
+                    android:text="未知"
+                    android:textColor="#000"
+                    android:textSize="20dp"
+                    android:textStyle="bold"
+                    android:textAlignment="viewEnd" />
+                <TextView
+                    android:id="@+id/maxSpeedFour"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:paddingLeft="5dp"
+                    android:text="未知"
+                    android:textColor="#000"
+                    android:textSize="20dp"
+                    android:textStyle="bold"
+                    android:textAlignment="viewEnd" />
+
+
+            </TableRow>
+            <TableRow>
+
+                <Button
+                    android:background="#ffffffff"
+                    android:text="最小速度/km/h"
+                    android:layout_width="60dp"
+                    android:layout_height="wrap_content"/>
+                <TextView
+                    android:id="@+id/minSpeedOne"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:paddingLeft="5dp"
+                    android:text="未知"
+                    android:textColor="#000"
+                    android:textSize="20dp"
+                    android:textStyle="bold"
+                    android:textAlignment="viewEnd" />
+                <TextView
+                    android:id="@+id/minSpeedTwo"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:paddingLeft="5dp"
+                    android:text="未知"
+                    android:textColor="#000"
+                    android:textSize="20dp"
+                    android:textStyle="bold"
+                    android:textAlignment="viewEnd" />
+                <TextView
+                    android:id="@+id/minSpeedThree"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:paddingLeft="5dp"
+                    android:text="未知"
+                    android:textColor="#000"
+                    android:textSize="20dp"
+                    android:textStyle="bold"
+                    android:textAlignment="viewEnd" />
+                <TextView
+                    android:id="@+id/minSpeedFour"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:paddingLeft="5dp"
+                    android:text="未知"
+                    android:textColor="#000"
+                    android:textSize="20dp"
+                    android:textStyle="bold"
+                    android:textAlignment="viewEnd" />
+
+
             </TableRow>
 
 
